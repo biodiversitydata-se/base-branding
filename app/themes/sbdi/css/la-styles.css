@@ -26,7 +26,7 @@ li.autocomplete-item {
 }
 
 .ui-autocomplete .ui-state-active {
-  background-color: rgb(255,171,64);
+  background-color: #c7d031;
   color: #212121;
   border: 1px solid #f2f2f2;
 }
