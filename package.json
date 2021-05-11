@@ -4,19 +4,19 @@
     "build": "brunch build --production"
   },
   "dependencies": {
-    "browser-sync-brunch": "^0.0.9",
     "countup.js": "2.0.3",
     "domurl": "^2.3.0",
-    "git-digest-brunch": "^1.0.3",
     "i18next": "^19.1.0",
     "i18next-browser-languagedetector": "^4.0.1",
     "i18next-http-backend": "^1.0.21",
     "i18next-localstorage-cache": "^1.1.1",
     "jquery-i18next": "^1.2.1",
-    "js-cookie": "^2.2.1",
-    "jscc-brunch": "^2.10.0"
+    "js-cookie": "^2.2.1"
   },
   "devDependencies": {
+    "browser-sync-brunch": "^0.0.9",
+    "git-digest-brunch": "^1.0.3",
+    "jscc-brunch": "^2.10.0",
     "babel-brunch": "~6.0",
     "babel-preset-latest": "^6",
     "brunch": "^2",
