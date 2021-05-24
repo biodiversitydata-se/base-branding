@@ -1,4 +1,3 @@
-
 <!-- site-banner -->
 
 <header id="masthead" class="site-header header-v1">
@@ -18,62 +17,270 @@
                   </a>
                 </div><!-- .site-branding -->
               </div>
-              <div class="item--inner builder-item--html" data-section="header_html" data-item-id="html">
+              <div class="item--inner builder-item--html " data-section="header_html" data-item-id="html">
                 <div class="builder-header-html-item item--html">
                   <p data-i18n="general.orgfullname"></p>
                 </div>
               </div>
             </div>
-            <div class="customify-col-4_md-4_sm-4 builder-item builder-first--search_box builder-item--group"
-              data-push-left="off-2">
 
-              <div class="item--inner builder-item--search_box" data-section="search_box" data-item-id="search_box">
+            <div class="customify-col-6_md-6_sm-6 builder-item builder-first--search_box builder-item--group"
+              data-push-left="">
+              <div id="header-search-box" class="item--inner builder-item--search_box" data-section="search_box"
+                data-item-id="search_box">
                 <div class="header-search_box-item item--search_box">
+                  <form method="get" action="::searchServer::::searchPath::"
+                    class="search-form navbar-form navbar-right">
+                    <div class="form-group">
+                      <input name="q" id="autocompleteHeader" type="text" class="form-control"
+                        data-i18n="[placeholder]nav.searchbox">
+                    </div>
 
+                    <button id="header-search-button" type="submit" class="search-submit" data-toggle="tooltip"
+                      data-i18n="[title]nav.searchbox">
+                      <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="21" viewBox="0 0 20 21">
+                        <path fill="currentColor" fill-rule="evenodd"
+                          d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z">
+                        </path>
+                      </svg>
+                    </button>
+
+                    <!-- <button type="submit" data-toggle="tooltip" aria-label="Left Align" data-placement="bottom"
+                      data-i18n="[title]nav.searchbox" class="btn btn-default">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button> -->
+
+                  </form>
+                 
                 </div>
               </div>
-              <div id="banner-head-buttons" class="item--inner builder-item--button" data-section="header_button" data-item-id="button">
-                <a target="_new" href="https://biodiversitydata.se"
-                  class="item--button customify-btn customify-builder-btn is-icon-before">
-                  <i class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-sbdi"></span></a>
-                <!-- TODO: fix international strings - data-i18n  -->
 
-                <a target="_new" href="https://docs.biodiversitydata.se"
-                  class="item--button customify-btn customify-builder-btn is-icon-before">
-                  <i class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-docs"></span></a>
-                <!-- TODO: fix international strings - data-i18n  -->
+              <div id="auth-header-buttons" class="item--inner builder-item--button hide-on-mobile hide-on-tablet ::loginStatus::"
+                data-section="header_button" data-item-id="button">
 
-                <!-- <a target="_new" href="https://tools.biodiversitydata.se"
-                  class="item--button customify-btn customify-builder-btn is-icon-before">
-                  <i class="fas fa-hands-helping"></i>&nbsp; <span data-i18n="nav.link-to-tools"></span></a> -->
-                <!-- TODO: fix international strings - data-i18n  -->
+                <!-- <a target="_blank" href="https://docs.biodiversitydata.se/support"
+                  class="item--button customify-btn customify-builder-btn is-icon-before"><i
+                    class="fa fa-external-link"></i> Support</a> -->                
 
-                <a target="_new" href="https://docs.biodiversitydata.se/support"
-                  class="item--button customify-btn customify-builder-btn is-icon-before">
-                  <i class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-support"></span></a>
-                <!-- TODO: fix international strings - data-i18n  -->
+                <a data-i18n="nav.login" style="margin-left:0.2rem;"" class="loginBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener"
+                  href="::loginURL::"></a>
 
+                  <a data-i18n="nav.myprofile" style="margin-left:0.2rem;"" class="myProfileBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener"
+                  href="::casURL::/userdetails/myprofile/"></a>
 
+                  <a data-i18n="nav.logout" style="margin-left:0.2rem;"" class="logoutBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener"
+                  href="::logoutURL::"></a>
+
+                  <a data-i18n="nav.create-account" style="margin-left:0.2rem;"" class="signUpBtn item--button customify-btn
+                  customify-builder-btn is-icon-before" rel="noopener"
+                  href="::casURL::/userdetails/registration/createAccount"></a>
 
               </div>
             </div>
 
           </div>
-          <div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle">
-            <div class="customify-col-12_md-12_sm-12 builder-item builder-first--logo" data-push-left="">
-              <div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
-                <div class="site-branding logo-bottom">
-                  <a href="https://docs.biodiversitydata.se/" class="logo-link" rel="home" itemprop="url">
-                    <img class="site-img-logo" src="::headerFooterServer::/images/sbdi-logo-orginal-large.png"
-                      alt="Swedish Biodiversity Data Infrastructure">
-                  </a>
-                </div><!-- .site-branding -->
-              </div>
+
+        </div>
+        <div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle">
+          <div class="customify-col-12_md-12_sm-12 builder-item builder-first--logo" data-push-left="">
+            <div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+              <div class="site-branding logo-bottom">
+                <a href="https://biodiversitydata.se" class="logo-link" rel="home" itemprop="url">
+                  <img class="site-img-logo"
+                    src="::headerFooterServer::/images/sbdi-logo-orginal-large.png"
+                    alt="Swedish Biodiversity Data Infrastructure">
+                </a>
+              </div><!-- .site-branding -->
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- TODO: fix localization data-i18n -->
+  <div class="header-bottom header--row layout-full-contained hide-on-mobile hide-on-tablet" id="cb-row--header-bottom"
+    data-row-id="bottom" data-show-on="desktop mobile">
+    <div class="header--row-inner header-bottom-inner">
+      <div class="customify-container">
+        <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle">
+          <div class="customify-col-12_md-12_sm-12 builder-item builder-first--primary-menu" data-push-left="">
+            <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary"
+              data-item-id="primary-menu">
+              <nav id="site-navigation-bottom-desktop"
+                class="site-navigation primary-menu primary-menu-bottom nav-menu-desktop primary-menu-desktop style-plain">
+                <ul id="menu-nested-pages-main-menu" class="primary-menu-ul menu nav-menu">
+                  <li id="menu-item--bottom-desktop-1923"
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1923">
+                    <a href="#"><span class="link-before">Search and Explore<span
+                          class="nav-icon-angle">&nbsp;</span></span></a>
+                    <ul class="sub-menu sub-lv-0">
+                      <li id="menu-item--bottom-desktop-1920"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1920"><a
+                          href="https://species.biodiversitydata.se/"><span class="link-before">Search
+                            species</span></a></li>
+                      <li id="menu-item--bottom-desktop-1927"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1927"><a
+                          href="https://records.biodiversitydata.se/#tab_simpleSearch"><span class="link-before">Search
+                            records</span></a></li>
+                      <li id="menu-item--bottom-desktop-1929"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1929">
+                        <a href="https://collections.biodiversitydata.se/datasets"><span class="link-before">Search
+                            datasets and checklists</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1931"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1931">
+                        <a href="https://molecular.biodiversitydata.se/"><span class="link-before">Search the Swedish
+                            ASV database</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1933"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1933"><a
+                          href="https://collections.biodiversitydata.se/"><span class="link-before">Explore data
+                            partners</span></a></li>
+                      <li id="menu-item--bottom-desktop-1935"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1935"><a
+                          href="https://lists.biodiversitydata.se/"><span class="link-before">Explore species
+                            lists</span></a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item--bottom-desktop-1937"
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1937">
+                    <a href="#"><span class="link-before">Locations<span class="nav-icon-angle">&nbsp;</span></span></a>
+                    <ul class="sub-menu sub-lv-0">
+                      <li id="menu-item--bottom-desktop-1939"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1939"><a
+                          href="https://regions.biodiversitydata.se/"><span class="link-before">Explore records in
+                            your area</span></a></li>
+                      <li id="menu-item--bottom-desktop-1941"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1941"><a
+                          href="https://regions.biodiversitydata.se/"><span class="link-before">Explore records in
+                            predefined region</span></a></li>
+                      <li id="menu-item--bottom-desktop-1943"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1943"><a
+                          href="https://spatial.biodiversitydata.se/"><span class="link-before">Explore records by
+                            spatial search</span></a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item--bottom-desktop-1946"
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1946">
+                    <a href="#"><span class="link-before">Our Tools<span class="nav-icon-angle">&nbsp;</span></span></a>
+                    <ul class="sub-menu sub-lv-0">
+                      <li id="menu-item--bottom-desktop-1948"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1948">
+                        <a href="https://biodiversitydata.se/explore/data-and-tools/tools-overview/"><span
+                            class="link-before">SBDI tools overview</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1950"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1950"><a
+                          href="https://spatial.biodiversitydata.se/"><span class="link-before">Spatial
+                            Portal</span></a></li>
+                      <li id="menu-item--bottom-desktop-1952"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1952"><a
+                          href="https://biocollect.biodiversitydata.se/"><span class="link-before">BioCollect</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1954"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1954">
+                        <a href="https://ctzn.biodiversitydata.se"><span class="link-before">Bioaltas
+                            Crowdsourcing</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-2018"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2018"><a
+                          href="https://api.biodiversitydata.se"><span class="link-before">Our API:s</span></a></li>
+                      <li id="menu-item--bottom-desktop-2019"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-2019">
+                        <a href="https://tools.biodiversitydata.se/mirroreum/"><span
+                            class="link-before">Mirroreum</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1956"
+                        class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1956">
+                        <a href="http://nordicmicroalgae.org/sv"><span class="link-before">Nordic Microalgae <i
+                              class="fa fa-external-link"></i></span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1958"
+                        class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1958">
+                        <a href="http://nordicmicroalgae.org/tools"><span class="link-before">Plankton Toolbox <i
+                              class="fa fa-external-link"></i></span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1960"
+                        class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1960">
+                        <a href="https://sharkweb.smhi.se/"><span class="link-before">SHARKweb <i
+                              class="fa fa-external-link"></i></span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1962"
+                        class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1962">
+                        <a href="https://www.slu.se/wram/"><span class="link-before">WRAM <i
+                              class="fa fa-external-link"></i></span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1964"
+                        class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1964">
+                        <a href="https://www.sead.se/"><span class="link-before">SEAD <i
+                              class="fa fa-external-link"></i></span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+
+                  <li id="menu-item--bottom-desktop-1966"
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1966">
+                    <a href="#"><span class="link-before">Help<span class="nav-icon-angle">&nbsp;</span></span></a>
+                    <ul class="sub-menu sub-lv-0">
+                      <li id="menu-item--bottom-desktop-1968"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1968">
+                        <a href="https://docs.biodiversitydata.se"><span class="link-before">Browse our help
+                            pages</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1970"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1970"><a
+                          href="https://docs.biodiversitydata.se/sbdi-data/citation-guide/"><span
+                            class="link-before">How to cite SBDI and data used</span></a></li>
+                      <li id="menu-item--bottom-desktop-1972"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1972"><a
+                          href="https://docs.biodiversitydata.se/publish-and-share-data/"><span
+                            class="link-before">Share your data</span></a></li>
+                      <li id="menu-item--bottom-desktop-1974"
+                        class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1974">
+                        <a href="https://docs.biodiversitydata.se/courses-and-training/"><span
+                            class="link-before">Courses and training</span></a>
+                      </li>
+                      <li id="menu-item--bottom-desktop-1976"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1976"><a
+                          href="https://docs.biodiversitydata.se/support"><span class="link-before">Contact us /
+                            Support</span></a></li>
+                    </ul>
+                  </li>
+                  <li id="menu-item--bottom-desktop-1828"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-596 menu-item-1828">
+                    <a href="https://tools.biodiversitydata.se/"><span class="link-before">SBDI
+                        tools</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle">
+          <div class="customify-col-12_md-12_sm-12 builder-item builder-first--nav-icon" data-push-left="">
+            <div class="item--inner builder-item--nav-icon" data-section="header_menu_icon" data-item-id="nav-icon">
+              <a
+                class="menu-mobile-toggle item-button is-size-desktop-medium is-size-tablet-medium is-size-mobile-medium">
+                <span class="hamburger hamburger--squeeze">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </span>
+                <span class="nav-icon--label hide-on-tablet hide-on-mobile">Menu</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   </div>
 </header>
@@ -82,7 +289,7 @@
 <!-- BootStrap 3 Classic Navbar addapted from sample:
      https://getbootstrap.com/docs/3.3/components/#navbar -->
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default hide-on-desktop">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -98,14 +305,142 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right"">
+      <ul class="nav navbar-nav navbar-right">
 
-        <li class=" hide-on-desktop hide-on-tablet"><a href="https://biodiversitydata.se"><i
-            class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-sbdi"></span></a></li>
-        <li class="hide-on-desktop hide-on-tablet"><a href="https://docs.biodiversitydata.se"><i
+        <li class=" hide-on-desktop hide-on-tablet"><a target="_blank" href="https://biodiversitydata.se"><i
+              class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-sbdi"></span></a></li>
+        <li class="hide-on-desktop hide-on-tablet"><a target="_blank" href="https://docs.biodiversitydata.se"><i
               class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-docs"></span></a></li>
-        <li class=" hide-on-desktop hide-on-tablet"><a href="https://docs.biodiversitydata.se/support"><i
-          class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-support"></span></a></li>
+        <li class=" hide-on-desktop hide-on-tablet"><a target="_blank"
+            href="https://docs.biodiversitydata.se/support"><i class="fas fa-external-link-alt"></i>&nbsp; <span
+              data-i18n="nav.link-to-support"></span></a></li>
+        <li class=" hide-on-desktop hide-on-tablet"><a target="_blank" href="https://tools.biodiversitydata.se"><i
+              class="fas fa-external-link-alt"></i>&nbsp; <span data-i18n="nav.link-to-tools"></span></a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false"><span data-i18n="">Search and Explore</span> <span class="caret"></span></a>
+          
+          <ul class="sub-menu sub-lv-0 dropdown-menu">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1920"><a
+                href="https://species.biodiversitydata.se/"><span class="link-before">Search
+                  species</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1927"><a
+                href="https://records.biodiversitydata.se/#tab_simpleSearch"><span class="link-before">Search
+                  records</span></a></li>
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1929">
+              <a href="https://collections.biodiversitydata.se/datasets"><span class="link-before">Search
+                  datasets and checklists</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1931">
+              <a href="https://molecular.biodiversitydata.se/"><span class="link-before">Search the Swedish
+                  ASV database</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1933"><a
+                href="https://collections.biodiversitydata.se/"><span class="link-before">Explore data
+                  partners</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1935"><a
+                href="https://lists.biodiversitydata.se/"><span class="link-before">Explore species
+                  lists</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false"><span data-i18n="">Locations</span> <span class="caret"></span></a>
+          
+          <ul class="sub-menu sub-lv-0 dropdown-menu">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1939"><a
+                href="https://regions.biodiversitydata.se/"><span class="link-before">Explore records in
+                  your area</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1941"><a
+                href="https://regions.biodiversitydata.se/"><span class="link-before">Explore records in
+                  predefined region</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1943"><a
+                href="https://spatial.biodiversitydata.se/"><span class="link-before">Explore records by
+                  spatial search</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false"><span data-i18n="">Our Tools</span> <span class="caret"></span></a>
+          
+          <ul class="sub-menu sub-lv-0 dropdown-menu">
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1948">
+              <a href="https://biodiversitydata.se/explore/data-and-tools/tools-overview/"><span
+                  class="link-before">SBDI tools overview</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1950"><a
+                href="https://spatial.biodiversitydata.se/"><span class="link-before">Spatial
+                  Portal</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1952"><a
+                href="https://biocollect.biodiversitydata.se/"><span class="link-before">BioCollect</span></a>
+            </li>
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1954">
+              <a href="https://ctzn.biodiversitydata.se"><span class="link-before">Bioaltas
+                  Crowdsourcing</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2018"><a
+                href="https://api.biodiversitydata.se"><span class="link-before">Our API:s</span></a></li>
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-2019">
+              <a href="https://tools.biodiversitydata.se/mirroreum/"><span class="link-before">Mirroreum</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1956">
+              <a href="http://nordicmicroalgae.org/sv"><span class="link-before">Nordic Microalgae <i
+                    class="fa fa-external-link"></i></span></a>
+            </li>
+            <li class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1958">
+              <a href="http://nordicmicroalgae.org/tools"><span class="link-before">Plankton Toolbox <i
+                    class="fa fa-external-link"></i></span></a>
+            </li>
+            <li class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1960">
+              <a href="https://sharkweb.smhi.se/"><span class="link-before">SHARKweb <i
+                    class="fa fa-external-link"></i></span></a>
+            </li>
+            <li class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1962">
+              <a href="https://www.slu.se/wram/"><span class="link-before">WRAM <i
+                    class="fa fa-external-link"></i></span></a>
+            </li>
+            <li class="menu-item-external-link menu-item menu-item-type-custom menu-item-object-custom menu-item-1964">
+              <a href="https://www.sead.se/"><span class="link-before">SEAD <i
+                    class="fa fa-external-link"></i></span></a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false"><span data-i18n="">Help</span> <span class="caret"></span></a>
+          <!-- <li 
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1966">
+          <a href="#"><span class="link-before">Help<span class="nav-icon-angle">&nbsp;</span></span></a> -->
+          <ul class="sub-menu sub-lv-0 dropdown-menu">
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1968">
+              <a href="https://docs.biodiversitydata.se"><span class="link-before">Browse our help
+                  pages</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1970"><a
+                href="https://docs.biodiversitydata.se/sbdi-data/citation-guide/"><span class="link-before">How to cite
+                  SBDI and data used</span></a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1972"><a
+                href="https://docs.biodiversitydata.se/publish-and-share-data/"><span class="link-before">Share your
+                  data</span></a></li>
+            <li class="menu-item-bottom-divider menu-item menu-item-type-custom menu-item-object-custom menu-item-1974">
+              <a href="https://docs.biodiversitydata.se/courses-and-training/"><span class="link-before">Courses and
+                  training</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1976"><a
+                href="https://docs.biodiversitydata.se/support"><span class="link-before">Contact us /
+                  Support</span></a></li>
+          </ul>
+        </li>
+      
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false"><span data-i18n="nav.more"></span> <span class="caret"></span></a>
@@ -115,7 +450,7 @@
             <li><a data-i18n="nav.logout" class="logoutBtn" href="::logoutURL::"></a></li>
             <li><a data-i18n="nav.create-account" class="signUpBtn"
                 href="::casURL::/userdetails/registration/createAccount"></a></li>
-            <li role="separator" class="divider"></li>
+            <!-- <li role="separator" class="divider"></li>
             <li><a data-i18n="nav.collectory" href="::collectoryURL::"></a></li>
             <li><a data-i18n="nav.biocache" href="::biocacheURL::"></a></li>
             <li><a data-i18n="nav.species" href="::bieURL::"></a></li>
@@ -125,7 +460,7 @@
             <li><a data-i18n="nav.images" href="::imagesURL::"></a></li>
             <li role="separator" class="divider"></li>
             <li><a data-i18n="nav.your-area" href="::biocacheURL::/explore/your-area/"></a></li>
-            <li><a data-i18n="nav.datasets" href="::datasetsURL::"></a></li>
+            <li><a data-i18n="nav.datasets" href="::datasetsURL::"></a></li> -->
           </ul>
         </li>
       </ul>
@@ -139,27 +474,11 @@
             <li class="locale-link" data-locale="en"><a class="en-locale-link" href="#"><span
                   class="lang_link_en">English</span></a></li>
             <li class="locale-link" data-locale="es"><a class="es-locale-link" href="#"><span
-                  class="lang_link_es">Español</span></a></li>
-            <li class="locale-link" data-locale="zh"><a class="zh-CN-locale-link" href="#"><span
-                  class="lang_link_zh-CN">简体中文</span></a></li>
-            <li class="locale-link" data-locale="sw"><a class="sw-locale-link" href="#"><span
-                  class="lang_link_sw">Swahili</span></a></li>
+                  class="lang_link_es">Español</span></a></li>            
           </ul>
         </li>
       </ul> -->
 
-      <!-- Search classic form with ALA autocomplete -->
-      <form method="get" action="::searchServer::::searchPath::" class="search-form navbar-form navbar-right">
-        <div class="form-group">
-          <input name="q" id="autocompleteHeader" type="text" class="form-control"
-            data-i18n="[placeholder]nav.searchbox">
-        </div>
-
-        <button type="submit" data-toggle="tooltip" aria-label="Left Align" data-placement="bottom"
-          data-i18n="[title]nav.searchbox" class="btn btn-default">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
-      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -183,6 +502,7 @@
       </li>
     </script>
 <!-- end site-banner -->
+
 <!-- maintenance -->
 <div id="mante-container" style="display: none;" class="container"></div>
 <!-- end maintenance -->

@@ -36,12 +36,18 @@ var loginStatusInIndex = () => {
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
+        $("#auth-header-buttons")
+        .removeClass("::loginStatus::")
+        .addClass("signedIn");
     } else {
       if (settings.isDevel)
         console.log("No auth cookie not present so not-logged in");
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedOut");
+        $("#auth-header-buttons")
+        .removeClass("::loginStatus::")
+        .addClass("signedOut");        
     }
   } else {
     if (settings.isDevel) console.log("We aren't in the main url");
