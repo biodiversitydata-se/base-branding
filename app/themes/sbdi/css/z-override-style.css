@@ -99,6 +99,10 @@ body {
     font-size: 1.175rem;
 }
 
+#taxaBox #rightList .rightCounts {
+    width: 5%;
+}
+
 a.item--button,
 #zoomTo.btn,
 #reset-map.btn,
@@ -283,6 +287,9 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 }
 #main .leaflet-pane {
     z-index: 8;
+}
+#main .leaflet-map-pane {
+    z-index: 1;
 }
 
 #main-content .leaflet-container .leaflet-popup-pane a,
@@ -530,6 +537,13 @@ footer .footer-bottom {
 
 footer {
     bottom: 0;
+    z-index: 9 !important;
+}
+
+@media (max-width: 768px) {
+    #site-footer .footer--row .builder-item--footer-1, #site-footer .builder-item.builder-item--group .item--inner.builder-item--footer-1 {
+        margin-left: 0;
+    }
 }
 
 .hoverRow td,
@@ -684,4 +698,10 @@ select.input-sm,
 }
 #main .panel-heading > .panel-title > button.close:hover {
     background-color: transparent;
+}
+
+#main .btn-group button, #main .btn-group .btn  {
+    margin: 0 !important;
+    height: 2.4rem;
+    line-height: 1.7rem
 }
