@@ -373,6 +373,9 @@ ul.nav-tabs {
     .navbar {
         border-radius: 0;
     }
+    #menu-nested-pages-main-menu {
+        margin: 0 8.5rem 0 0;
+    }
 }
 
 .navbar {
@@ -505,6 +508,10 @@ ol.breadcrumb-list li:first-child {
     padding-left  : 10px;
     /* font-family: "FontAwesome";
         content   : "\f35d"; */
+}
+/* Active dropdown background color */
+nav.hide-on-desktop .navbar-nav>.open>a, nav.hide-on-desktop .navbar-nav>.open>a:hover, nav.hide-on-desktop .navbar-nav>.open>a:focus {
+    background-color: var(--primary-sbdi-darkblue, #004767);
 }
 
 
