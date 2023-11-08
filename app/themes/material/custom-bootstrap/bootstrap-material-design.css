@@ -1427,13 +1427,13 @@ label.radio-inline input[type=radio]:focus:checked ~ .check:after {
        -o-animation: rippleOn 500ms;
           animation: rippleOn 500ms;
 }
-.radio input[type=radio],
+/* .radio input[type=radio],
 label.radio-inline input[type=radio] {
   opacity: 0;
   height: 0;
   width: 0;
   overflow: hidden;
-}
+} */
 .radio input[type=radio]:checked ~ .check,
 label.radio-inline input[type=radio]:checked ~ .check,
 .radio input[type=radio]:checked ~ .circle,
