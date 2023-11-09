@@ -11,3 +11,6 @@ build:
 bump-deps:
 	rm -r node_modules
 	yarn --frozen-lockfile
+
+release:
+	../sbdi-install/utils/make-release.sh
