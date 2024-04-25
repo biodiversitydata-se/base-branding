@@ -28,6 +28,10 @@ The goal is also not to deal with [duplicate code and their problems](https://en
 
 So if ALA fix some js error, or if add a new chart lib, or similar, we can include that changes in our build easily. 
 
+This is how the `base-branding` includes the ALA theme code in the [build process](https://github.com/living-atlases/base-branding/blob/a1204080896101b07ef769e273963f67d75e3291/brunch-config.js#L66):
+
+![image](https://github.com/living-atlases/base-branding/assets/180085/fe465bc3-335a-42c0-a5c6-ff1d4823edf6)
+
 The branding also create some homepage, some test pages and a error page. But if you need some more complex homepage, and for instance, you need to use a CMS (like Wordpress), our recommendation is that you can use a similar strategy to avoid the need of keed in sync your LA branding and your CMS theme. So you can develop a common header/footer and css styling in your CMS, and include it in a fork of this sample branding. In summary:
 
 ```
@@ -35,7 +39,7 @@ Your branding ---- uses ---> ALA branding resources ---- uses ----> ALA WP theme
               `--- uses ---> you CMS theme resources
 ```
 
-So if for instance, you change a logo or a footer link in your CMS you can have the same change in your ALA portal easily.
+So if for instance, you change a logo or a footer link in your CMS you can have the same change in your LA portal easily. For that you need to include it a submodule and also [copy your resources](https://github.com/living-atlases/base-branding/blob/a1204080896101b07ef769e273963f67d75e3291/brunch-config.js#L66) during the build like we do with the ALA resources. 
 
 Also in general we try not to mix libs versions like different Boostrap or jQuery versions.
 
