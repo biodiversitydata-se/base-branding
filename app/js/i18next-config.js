@@ -132,6 +132,7 @@ i18n.use(backend)
         $('#dropdown-lang').find('.dropdown-toggle').html(i18n.language + ' <span class="caret"></span>');
       }
 
+      /* SBDI - this causes unnecessary and annoying duplicate requests
       if (typeof Cookies.get(laSessionCookie) === 'undefined' && typeof currentUrl.query.lang === 'undefined') {
         // Workaround to set grails locale
         // This will use to do a unique lang redirect (to force grails to set the lang for the session)
@@ -141,6 +142,7 @@ i18n.use(backend)
         currentUrl.query.lang = i18n.language;
         document.location.search = currentUrl.query;
       }
+      */
 
       // cookies eu consent
       /* const cookiesOpt = {
