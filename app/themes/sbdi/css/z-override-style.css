@@ -733,3 +733,18 @@ select.input-sm,
 ul.btn-group a, span.button a {
     color: #fff !important;
 }
+
+/* ala-hub (biocache-hubs) overrides (data quality filtering) */
+a#view-excluded {
+    padding: 0.5em 0.5em !important;
+}
+button#expandfilters {
+    padding: 0 0.85em !important;
+}
+form#filterRefineForm button.btn {
+    padding: 0 0.5em !important;
+}
+form#filterRefineForm button.btn a {
+    color: #fff !important;
+    text-transform: none !important;
+}
