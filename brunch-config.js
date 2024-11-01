@@ -59,7 +59,7 @@ exports.plugins = {
   // This do some var substition in js code:
   jscc: {
     values: {
-      _LOCALES_URL: process.env.NODE_ENV === 'development' ? settings.baseFooterUrl : settings.baseFooterUrl
+      _LOCALES_URL: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : settings.baseFooterUrl
     }
   },
   babel: {presets: ['latest']},
@@ -105,7 +105,7 @@ exports.plugins = {
       { files: toReplace, match: { find: '::containerClass::', replace: 'container' }},
       { files: toReplace, match: { find: '::headerFooterServer::', replace:
                                    process.env.NODE_ENV === 'development' ?
-                                   settings.baseFooterUrl:
+                                   'http://localhost:3333':
                                    settings.baseFooterUrl }},
       { files: toReplace, match: { find: '::loginURL::', replace: `${settings.services.cas.url}/cas/login` }},
       { files: toReplace, match: { find: '::logoutURL::', replace: `${settings.services.cas.url}/cas/logout` }},
