@@ -20,6 +20,19 @@
 <!-- Matomo -->
 <script type="text/javascript">
   if (window.location.hostname !== "localhost") {
+    var hostMap = {
+      'auth.biodiversitydata.se': '17',
+      'collections.biodiversitydata.se': '18',
+      'dashboard.biodiversitydata.se': '19',
+      'images.biodiversitydata.se': '20',
+      'lists.biodiversitydata.se': '21',
+      'records.biodiversitydata.se': '22',
+      'regions.biodiversitydata.se': '23',
+      'sds.biodiversitydata.se': '24',
+      'spatial.biodiversitydata.se': '25',
+      'species.biodiversitydata.se': '26',
+    };
+    var siteId = hostMap[window.location.hostname] || '5';
     var _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -30,11 +43,10 @@
     (function() {
       var u="//matomo.biodiversitydata.se/";
       _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '5']);
+      _paq.push(['setSiteId', siteId]);
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
       g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
   }
 </script>
-<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//matomo.biodiversitydata.se/matomo.php?idsite=5&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Matomo Code -->
