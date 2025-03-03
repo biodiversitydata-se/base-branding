@@ -685,34 +685,6 @@ select.input-sm,
     background-color: var(--primary-sbdi-green, #6aa842) !important;
 }
 
-/* Spatial portal overrides */
-#left-panel {
-    width: 430px !important;
-    overflow-y: auto !important;
-    max-height: 100% !important;
-    font-size: .85rem;
-}
-#right-panel {
-    margin-left: 430px !important;
-}
-#left-panel .panel-body {
-    padding: 0;
-}
-#main .panel-heading > .panel-title > button.close {
-    color: black;
-    margin: -1rem;
-    height: 1rem;
-}
-#main .panel-heading > .panel-title > button.close:hover {
-    background-color: transparent;
-}
-
-#main .btn-group button, #main .btn-group .btn  {
-    margin: 0 !important;
-    height: 2.4rem;
-    line-height: 1.7rem
-}
-
 /* Collectory overrides (admin pages) */
 .btn .mainLink {
     background-color: var(--primary-sbdi-darkblue,#004767) !important;
