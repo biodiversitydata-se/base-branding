@@ -706,7 +706,7 @@ ul.btn-group a, span.button a {
     color: #fff !important;
 }
 
-/* ala-hub (biocache-hubs) overrides (data quality filtering) */
+/* Ala-hub (biocache-hubs) overrides (data quality filtering) */
 a#view-excluded {
     padding: 0.5em 0.5em !important;
 }
@@ -719,4 +719,13 @@ form#filterRefineForm button.btn {
 form#filterRefineForm button.btn a {
     color: #fff !important;
     text-transform: none !important;
+}
+
+/* Regions overrides */
+tr.groupSelected, tr.groupSelected td, tr.groupSelected:hover td {
+    background-color: var(--primary-sbdi-mediumblue) !important;
+}
+
+tr.speciesSelected, tr.speciesSelected td, tr.speciesSelected:hover td {
+    background-color: var(--primary-sbdi-mediumblue) !important;
 }
