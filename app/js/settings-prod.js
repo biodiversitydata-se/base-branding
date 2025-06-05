@@ -1,5 +1,5 @@
 export default {
-  isDevel: true,
+  isDevel: false,
   inMante: false, // set to true and deploy if you want to set a maintenance message in all the services
   enabledLangs: ["en"],
   mainDomain: "biodiversitydata.se", // used for cookies (without http/https)

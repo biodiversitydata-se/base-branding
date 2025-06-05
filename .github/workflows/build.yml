@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '22.x'
 
+      - name: Copy production settings
+        run: cp app/js/settings-prod.js app/js/settings.js
+
       - name: Install dependencies
         run: make deps
 
