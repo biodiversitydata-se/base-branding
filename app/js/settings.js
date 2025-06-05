@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   isDevel: true,
   inMante: false, // set to true and deploy if you want to set a maintenance message in all the services
   enabledLangs: ["en"],
@@ -14,8 +14,6 @@ module.exports = {
       title: "Occurrence records webservice",
     },
     bie: { url: "https://species.biodiversitydata.se", title: "Species" },  
-    // This bieService var is used by the search autocomplete. With your BIE
-    // service running and well indexed, you can put here your url
     bieService: {
       url: "https://species.biodiversitydata.se/ws",
       title: "Species webservice",
@@ -35,4 +33,8 @@ module.exports = {
     { title: "Datasets", url: "https://collections.biodiversitydata.se/datasets" },
     { title: "twitter", url: "", icon: "twitter" },
   ],
+  analytics: {
+    googleId: 'UA-XXXXXXXX-1'
+  }
 };
+
