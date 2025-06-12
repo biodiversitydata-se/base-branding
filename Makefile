@@ -1,16 +1,19 @@
-run:
-	brunch watch -s
+deps:
+	rm -rf node_modules
+	npm install
 
-run-docker: build
+run:
+	npm run dev
+
+run-docker: build-local
 	docker build -t sbdi/static-dev .
 	docker run --rm --detach --name sbdi-static-dev --publish 3333:80 sbdi/static-dev
 
 build:
-	brunch build --production
+	npm run build
 
-bump-deps:
-	rm -r node_modules
-	yarn --frozen-lockfile
+build-local:
+	npm run build-local
 
 release:
 	../sbdi-install/utils/make-release.sh
