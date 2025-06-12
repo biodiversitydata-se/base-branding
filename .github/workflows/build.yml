@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - sbdi-vite
 
 jobs:
 
@@ -48,5 +48,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: sbdi-vite
+          #labels: ${{ steps.meta.outputs.labels }}
