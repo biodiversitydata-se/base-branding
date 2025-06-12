@@ -3,8 +3,8 @@ export default {
   inMante: false, // set to true and deploy if you want to set a maintenance message in all the services
   enabledLangs: ["en"],
   mainDomain: "biodiversitydata.se", // used for cookies (without http/https)
-  mainLAUrl: "https://static.biodiversitydata.se",
-  baseFooterUrl: "https://static.biodiversitydata.se",
+  mainLAUrl: "http://localhost:3333",
+  baseFooterUrl: "http://localhost:3333",
   theme: "sbdi", // for now 'material', 'sbdi' 'clean', 'superhero', 'yeti', 'cosmo', 'darkly', 'paper', 'sandstone', 'simplex', 'slate' or 'flatly' themes are available. See the last ones in: https://bootswatch.com/3/
   services: {
     collectory: { url: "https://collections.biodiversitydata.se", title: "Collections" },
