@@ -2,43 +2,24 @@
     <div id="main_content" class="la-content container">
       <a name="top"></a>
       
-      <div class="jumbotron">
-        <h1 data-i18n="general.orgfullname"></h1>
-        <p data-i18n="index.slogan"></p>
-      </div>
-<!-- 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="list-group">
-            <a href="::biocacheURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.occurrences"></h4>
-              <p class="list-group-item-text" id="stats_occurrences"></p>
-            </a>
-          </div>
-          <div class="list-group">
-            <a href="::datasetsURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.datasets"></h4>
-              <p class="list-group-item-text" id="stats_datasets"></p>
-            </a>
-          </div>
+       <h1 data-i18n="index.slogan" style="margin-top: 40px; color: #004767;"></h1>
+
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <div style="margin: 10px 20px;">
+          <a href="::datasetsURL::" style="font-size: 2em;">
+            <span id="stats_datasets" style="display: block; font-weight:700;"></span>
+            datasets
+          </a>
         </div>
-        <div class="col-md-6">
-          <div class="list-group">
-            <a href="::collectoryURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.institutions"></h4>
-              <p class="list-group-item-text" id="stats_institutions"></p>
-            </a>
-          </div>
-          <div class="list-group">
-            <a href="::bieURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.species"></h4>
-              <p class="list-group-item-text" id="stats_species"></p>
-            </a>
-          </div>
+        <div style="margin: 10px 20px;">
+          <a href="::biocacheURL::" style="font-size: 2em;">
+            <span id="stats_occurrences" style="display: block; font-weight:700;"></span>
+            occurrence recods
+          </a>
         </div>
       </div>
 
-      <div class="list-group">
+      <div class="list-group" style="margin-top: 40px; margin-bottom: 40px;">
         <form method="get" action="::searchServer::::searchPath::" class="search-form" id="main_biosearch_form" action="#">
           <div class="input-group">
             <div class="form-group is-empty">
@@ -49,5 +30,5 @@
             </span>
           </div>
         </form>
-      </div> -->
+      </div>
     </div>
