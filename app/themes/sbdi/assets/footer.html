@@ -2,21 +2,27 @@
 <footer class="site-footer" id="site-footer">
   <div class="footer-bottom footer--row layout-full-contained" id="cb-row--footer-bottom" data-row-id="bottom"
     data-show-on="desktop mobile">
-    <div class="footer--row-inner footer-bottom-inner dark-mode">
+    <div class="footer--row-inner footer-bottom-inner dark-mode" style="padding-top: 0.8rem; padding-bottom: 0.8rem;">
       <div class="customify-container">
         <div class="customify-grid  customify-grid-top">
           <div class="customify-col-12_md-12_sm-12_xs-12 builder-item builder-first--footer_copyright"
             data-push-left="_sm-0">
             <div class="item--inner builder-item--footer_copyright" data-section="footer_copyright"
               data-item-id="footer_copyright">
-              <div class="builder-footer-copyright-item footer-copyright">
-                <span class="text-muted">Copyright &copy; <span id="footer-copyright">
-                    <script>
-                      document
-                        .getElementById("footer-copyright")
-                        .appendChild(document.createTextNode(new Date().getFullYear()));
-                    </script>
-                  </span></span> – <span class="text-muted" data-i18n="general.orgfullname"></span>
+              <div class="builder-footer-copyright-item footer-copyright" style="display: flex;">
+                <div style="flex-grow: 1; align-self: center;">
+                  <span class="text-muted">Copyright &copy; <span id="footer-copyright">
+                      <script>
+                        document
+                          .getElementById("footer-copyright")
+                          .appendChild(document.createTextNode(new Date().getFullYear()));
+                      </script>
+                    </span></span> – <span class="text-muted" data-i18n="general.orgfullname"></span>
+                </div>
+                <div>
+                  <a href="https://biodiversitydata.se/accessibility/" style="color: white;">Accessibility</a><br>
+                  <a href="https://biodiversitydata.se/privacy-policy/" style="color: white;">Privacy Policy</a>
+                </div>
               </div>
             </div>
           </div>
