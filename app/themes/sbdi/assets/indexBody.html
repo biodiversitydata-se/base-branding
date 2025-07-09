@@ -2,43 +2,24 @@
     <div id="main_content" class="la-content container">
       <a name="top"></a>
       
-      <div class="jumbotron">
-        <h1 data-i18n="general.orgfullname"></h1>
-        <p data-i18n="index.slogan"></p>
-      </div>
-<!-- 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="list-group">
-            <a href="::biocacheURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.occurrences"></h4>
-              <p class="list-group-item-text" id="stats_occurrences"></p>
-            </a>
-          </div>
-          <div class="list-group">
-            <a href="::datasetsURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.datasets"></h4>
-              <p class="list-group-item-text" id="stats_datasets"></p>
-            </a>
-          </div>
+      <h1 data-i18n="index.slogan" style="text-align: center; margin-top: 40px; color: #004767;"></h1>
+
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <div style="margin: 10px 20px;">
+          <a href="::datasetsURL::" style="font-size: 2em;">
+            <span id="stats_datasets" style="display: block; font-weight:700;"></span>
+            datasets
+          </a>
         </div>
-        <div class="col-md-6">
-          <div class="list-group">
-            <a href="::collectoryURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.institutions"></h4>
-              <p class="list-group-item-text" id="stats_institutions"></p>
-            </a>
-          </div>
-          <div class="list-group">
-            <a href="::bieURL::" class="list-group-item">
-              <h4 class="list-group-item-heading" data-i18n="index.stats.species"></h4>
-              <p class="list-group-item-text" id="stats_species"></p>
-            </a>
-          </div>
+        <div style="margin: 10px 20px;">
+          <a href="::biocacheURL::" style="font-size: 2em;">
+            <span id="stats_occurrences" style="display: block; font-weight:700;"></span>
+            occurrence recods
+          </a>
         </div>
       </div>
 
-      <div class="list-group">
+      <div class="list-group" style="margin-top: 40px; margin-bottom: 40px;">
         <form method="get" action="::searchServer::::searchPath::" class="search-form" id="main_biosearch_form" action="#">
           <div class="input-group">
             <div class="form-group is-empty">
@@ -49,5 +30,53 @@
             </span>
           </div>
         </form>
-      </div> -->
+      </div>
+
+      <div style="display: flex; justify-content: space-around;">
+        <div>
+          <img src="https://tools.biodiversitydata.se/wp-content/uploads/2021/05/Krister-Hall-e1621900262459.jpg" style="width: 300px;">
+          <h2 style="font-size: large;">Data and Partners</h2>
+          <ul>
+            <li>
+              <a href="https://collections.biodiversitydata.se/datasets">Search datasets and checklists</a>
+            </li>
+            <li>
+              <a href="https://collections.biodiversitydata.se/">Explore data partners</a>
+            </li>
+            <li>
+              <a href="https://lists.biodiversitydata.se/">Explore species lists</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://tools.biodiversitydata.se/wp-content/uploads/2021/05/Johan-N-o-trollslandan-180522-TC-e1621899202270.jpg" style="width: 300px;">
+          <h2 style="font-size: large;">Explore by Location</h2>
+          <ul>
+            <li>
+              <a href="https://records.biodiversitydata.se/explore/your-area">Explore records in your area</a>
+            </li>
+            <li>
+              <a href="https://regions.biodiversitydata.se/">Explore records in predefined regions</a>
+            </li>
+            <li>
+              <a href="https://records.biodiversitydata.se/search#tab_spatialSearch">Search by polygon</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://tools.biodiversitydata.se/wp-content/uploads/2021/05/100069_lovgroda_REK-1-e1621899165215.jpg" style="width: 300px;">
+          <h2 style="font-size: large;">Search and Analyse</h2>
+          <ul>
+            <li>
+              <a href="https://species.biodiversitydata.se/">Search species</a>
+            </li>
+            <li>
+              <a href="https://records.biodiversitydata.se/#tab_simpleSearch">Search occurrence records</a>
+            </li>
+            <li>
+              <a href="https://spatial.biodiversitydata.se/">Analyse data in Spatial Portal</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>

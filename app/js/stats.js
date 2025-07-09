@@ -38,14 +38,10 @@ var getStats = (url, callback) => {
 // If you want to show collections stats:
 // `${collectory}/ws/dataResource/count`
 var loadStats = () => {
-  getStats(`${biocacheService}/occurrences`, (data) => {
-    setCounter('stats_occurrences', data.totalRecords, () =>
-      getStats(`${collectory}/ws/dataResource/count`, (data) => {
-        setCounter('stats_datasets', data.total, () =>
-          getStats(`${collectory}/ws/institution/count`, (data) => {
-            setCounter('stats_institutions', data.total);
-          })
-        )
+  getStats(`${collectory}/ws/dataResource/count`, (data) => {
+    setCounter('stats_datasets', data.total, () =>
+      getStats(`${biocacheService}/occurrences`, (data) => {
+        setCounter('stats_occurrences', data.totalRecords);
       })
     )});
   // Right now this is slow so we put here
