@@ -36,7 +36,7 @@ var loginStatusInIndex = () => {
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
-        $("#auth-header-buttons")
+        $("#user-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
     } else {
@@ -45,9 +45,9 @@ var loginStatusInIndex = () => {
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedOut");
-        $("#auth-header-buttons")
+        $("#user-menu")
         .removeClass("::loginStatus::")
-        .addClass("signedOut");        
+        .addClass("signedOut");
     }
   } else {
     if (settings.isDevel) console.log("We aren't in the main url");

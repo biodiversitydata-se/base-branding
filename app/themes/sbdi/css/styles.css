@@ -366,6 +366,10 @@ a.item--button:hover {
     text-align: left;
 }
 
+.bg-sbdi-blue {
+    background-color: #004767;
+}
+
 /* CSS for tablet */
 @media screen and (max-width: 1024px) {
     #page-cover .page-cover-inner {
