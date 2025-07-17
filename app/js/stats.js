@@ -28,7 +28,7 @@ var setCounter = (id, val, onEnd) => {
 var getStats = (url, callback) => {
   if (settings.isDevel) {
     if (url.indexOf('species') > -1) callback([{ count: 10402 }]);
-    else callback({ totalRecords: 86965283, total: 12922 });
+    else callback({ totalRecords: 165486178, total: 227 });
   } else {
     // Real call in production
     $.getJSON(url, callback);
