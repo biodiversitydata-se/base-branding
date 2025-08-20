@@ -33,12 +33,13 @@
 </footer>
 
 <!-- End footer -->
-<script type="text/javascript">
+<script>
   function focusScroll() {
     // Allow to move with PgUp/Down the main contain without having to focus manually
     $("#main_content").trigger("focus");
   }
 
+  // Set up search box in header
   const searchIcon = document.getElementById('searchIcon');
   const searchForm = document.getElementById('searchForm');
 
@@ -49,7 +50,7 @@
     searchForm.querySelector("input[name='q']").focus();
   });
 
-  // Close search when clicking outside
+  // Close search box when clicking outside
   document.addEventListener('click', (e) => {
     if (!searchIcon.contains(e.target) && !searchForm.contains(e.target)) {
       searchForm.classList.add('hidden');
