@@ -250,27 +250,28 @@ h1.index-header {
 }
 
 .index-search {
-    margin: 3rem 15rem;
+    margin: 3rem 15rem 0;
 }
 
 .index-counters {
     display: flex;
     justify-content: center;
-    margin-bottom: 4em;
+    margin-top: 4rem;
 }
 .index-counters > div {
-    margin: 0.75rem 1.5rem;
-    padding: 0.75rem;
-    background-color: #eee;
-    border-radius: 0.375rem;
-}
-.index-counters a {
-    font-size: 1.5rem;
+    margin: 1.5rem 2.25rem;
+    color: var(--primary-sbdi-darkblue);
     text-align: center;
 }
-.index-counters span {
-    font-weight: 700;
+.index-counters > div > a {
     display: block;
+    font-size: 2.5rem;
+}
+.index-counters > div > a:hover {
+    color: var(--primary-sbdi-darkblue);
+}
+.index-counters > div > div {
+    font-size: 1.8rem;
 }
 
 /* CSS for desktop */
