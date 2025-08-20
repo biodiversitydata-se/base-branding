@@ -46,7 +46,7 @@
   searchIcon.addEventListener('click', (e) => {
     e.preventDefault();
     searchForm.classList.toggle('hidden');
-    searchIcon.classList.toggle('bg-sbdi-blue');
+    searchIcon.classList.toggle('bg-sbdi-darkblue');
     searchForm.querySelector("input[name='q']").focus();
   });
 
@@ -54,7 +54,7 @@
   document.addEventListener('click', (e) => {
     if (!searchIcon.contains(e.target) && !searchForm.contains(e.target)) {
       searchForm.classList.add('hidden');
-      searchIcon.classList.remove('bg-sbdi-blue');
+      searchIcon.classList.remove('bg-sbdi-darkblue');
     }
   });
 </script>

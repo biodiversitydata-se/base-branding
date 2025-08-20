@@ -238,8 +238,15 @@ a.item--button:hover {
     background-color: rgba(238, 238, 238, 0.5);
 }
 
-.bg-sbdi-blue {
-    background-color: #004767;
+/* Nextgen */
+.bg-sbdi-darkblue {
+    background-color: var(--primary-sbdi-darkblue);
+}
+
+h1.index-header {
+    margin-top: 5rem;
+    text-align: center;
+    color: var(--primary-sbdi-darkblue);
 }
 
 /* CSS for desktop */
