@@ -6,7 +6,7 @@
       <h1 data-i18n="index.slogan" class="index-header"></h1>
 
       <!-- Search -->
-      <div class="list-group" style="margin: 3em 15em;">
+      <div class="index-search">
         <form method="get" action="::searchServer::::searchPath::" class="search-form" id="main_biosearch_form" action="#">
           <div class="input-group">
             <div class="form-group is-empty">
@@ -20,29 +20,25 @@
       </div>
 
       <!-- Counters -->
-      <div style="display: flex; justify-content: center; margin-bottom: 4em">
-        <div style="margin: 10px 20px; padding: 10px; background-color: #eee; border-radius: 0.375rem;">
-          <a href="::biocacheURL::" style="font-size: 1.5rem;">
-            <span id="stats_occurrences" style="display: block; font-weight:700;"></span>
-            occurrence recods
+      <div class="index-counters">
+        <div>
+          <a href="::biocacheURL::">
+            <span id="stats_occurrences"></span> occurrence recods
           </a>
         </div>
-        <div style="margin: 10px 20px; padding: 10px; background-color: #eee; border-radius: 0.375rem;">
-          <a href="::datasetsURL::" style="font-size: 1.5rem;">
-            <span id="stats_datasets" style="display: block; font-weight:700;"></span>
-            datasets
+        <div>
+          <a href="::datasetsURL::">
+            <span id="stats_datasets"></span> datasets
           </a>
         </div>
-        <div style="margin: 10px 20px; padding: 10px; background-color: #eee; border-radius: 0.375rem;">
-          <a href="::collectoryURL::" style="font-size: 1.5rem;">
-            <span id="stats_institutions" style="display: block; font-weight:700;"></span>
-            institutions
+        <div>
+          <a href="::collectoryURL::">
+            <span id="stats_institutions"></span> institutions
           </a>
         </div>
-        <div style="margin: 10px 20px; padding: 10px; background-color: #eee; border-radius: 0.375rem;">
-          <a href="::bieURL::" style="font-size: 1.5rem;">
-            <span id="stats_species" style="display: block; font-weight:700;"></span>
-            species
+        <div>
+          <a href="::bieURL::">
+            <span id="stats_species"></span> species
           </a>
         </div>
       </div>

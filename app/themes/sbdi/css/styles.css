@@ -249,6 +249,30 @@ h1.index-header {
     color: var(--primary-sbdi-darkblue);
 }
 
+.index-search {
+    margin: 3rem 15rem;
+}
+
+.index-counters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+.index-counters > div {
+    margin: 0.75rem 1.5rem;
+    padding: 0.75rem;
+    background-color: #eee;
+    border-radius: 0.375rem;
+}
+.index-counters a {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.index-counters span {
+    font-weight: 700;
+    display: block;
+}
+
 /* CSS for desktop */
 #sidebar-secondary,
 #sidebar-primary,
