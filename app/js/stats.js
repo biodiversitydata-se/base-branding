@@ -27,7 +27,8 @@ var setCounter = (id, val, onEnd) => {
 
 var getStats = (url, callback) => {
   if (settings.isDevel) {
-    if (url.indexOf('species') > -1) callback([{ count: 10402 }]);
+    if (url.indexOf('species') > -1) callback([{ count: 330812 }]);
+    else if (url.indexOf('institution') > -1) callback({ total: 29 });
     else callback({ totalRecords: 165486178, total: 227 });
   } else {
     // Real call in production
@@ -38,13 +39,15 @@ var getStats = (url, callback) => {
 // If you want to show collections stats:
 // `${collectory}/ws/dataResource/count`
 var loadStats = () => {
+  getStats(`${biocacheService}/occurrences`, (data) => {
+    setCounter('stats_occurrences', data.totalRecords);
+  });
   getStats(`${collectory}/ws/dataResource/count`, (data) => {
-    setCounter('stats_datasets', data.total, () =>
-      getStats(`${biocacheService}/occurrences`, (data) => {
-        setCounter('stats_occurrences', data.totalRecords);
-      })
-    )});
-  // Right now this is slow so we put here
+    setCounter('stats_datasets', data.total);
+  });
+  getStats(`${collectory}/ws/institution/count`, (data) => {
+    setCounter('stats_institutions', data.total);
+  });
   getStats(`${biocacheService}/occurrence/facets?q=*:*&facets=species&pageSize=0`, (data) => {
     setCounter("stats_species", data[0].count);
   });
