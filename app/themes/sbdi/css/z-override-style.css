@@ -659,22 +659,6 @@ select.input-sm,
     }
 }
 
-.signedIn a.signUpBtn {
-    display: none !important;
-}
-
-.signedOut a.myProfileBtn {
-    display: none !important;
-}
-
-.signedIn a.loginBtn {
-    display: none !important;
-}
-
-.signedOut a.logoutBtn {
-    display: none !important;
-}
-
 #loading-bar .bar,
 .uib-progressbar, 
 .progress-bar-danger, 
