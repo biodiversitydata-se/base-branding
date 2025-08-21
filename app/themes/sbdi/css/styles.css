@@ -243,6 +243,32 @@ a.item--button:hover {
     background-color: var(--primary-sbdi-darkblue);
 }
 
+.banner-portals {
+    margin-top: 1em;
+}
+.banner-portals a {
+    color: var(--primary-sbdi-darkblue);
+}
+#searchIcon {
+    padding-top: 20px; 
+    padding-bottom: 18px;
+}
+#searchForm {
+    position: absolute;
+    margin-left: -27em;
+}
+#searchForm input {
+    width: 30em;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.banner-user-icon {
+    padding-top: 20px !important;
+    padding-bottom: 18px !important;
+}
+
 h1.index-header {
     margin-top: 5rem;
     text-align: center;
