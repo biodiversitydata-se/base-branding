@@ -6,18 +6,14 @@
       <h1 data-i18n="index.slogan" class="index-header"></h1>
 
       <!-- Search -->
-      <div class="index-search">
-        <form method="get" action="::searchServer::::searchPath::" class="search-form" id="main_biosearch_form" action="#">
-          <div class="input-group">
-            <div class="form-group is-empty">
-              <input data-i18n="[placeholder]nav.searchbox" id="search" class="form-control ac_input general-search ui-autocomplete-input" name="q" type="text"  autocomplete="off">
-            </div>
-            <span id="main_biosearch_label" class="input-group-btn">
-              <div class="form-group"><input data-i18n="[value]index.search-btn" type="submit" class="form-control btn btn-raised btn-primary" alt="Search" value=""></div>
-            </span>
-          </div>
-        </form>
-      </div>
+      <form id="main_biosearch_form" method="get" action="::searchServer::::searchPath::" class="index-search search-form">
+        <div class="input-group">
+          <input id="search" data-i18n="[placeholder]nav.searchbox" class="form-control ac_input general-search ui-autocomplete-input" name="q" type="text" autocomplete="off">
+          <span class="input-group-btn">
+            <input data-i18n="[value]index.search-btn" type="submit" class="form-control btn btn-primary" alt="Search" value="">
+          </span>
+        </div>
+      </form>
 
       <!-- Counters -->
       <div class="index-counters">
