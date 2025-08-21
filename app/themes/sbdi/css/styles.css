@@ -303,6 +303,21 @@ h1.index-header {
     color: var(--primary-sbdi-darkblue);
 }
 
+.footer-ng {
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+}
+.footer-ng a {
+    color: #ffffff !important;
+}
+.footer-ng-copyright {
+    display: flex;
+}
+.footer-ng-copyright-text {
+    flex-grow: 1;
+    align-self: center;
+}
+
 /* CSS for desktop */
 #sidebar-secondary,
 #sidebar-primary,
