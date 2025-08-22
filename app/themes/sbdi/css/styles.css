@@ -276,11 +276,23 @@ h1.index-header {
 }
 
 .index-search {
-    margin: 3rem 15rem 0;
+    width: 50rem;
+    margin: 3rem auto 0 auto;
+}
+@media screen and (max-width: 1024px) {    
+    .index-search {
+        width: 40rem;
+    }
+}
+@media screen and (max-width: 586px) {
+    .index-search {
+        width: 23rem;
+    }
 }
 
 .index-counters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 3rem;
 }
@@ -299,16 +311,40 @@ h1.index-header {
 .index-counters > div > div {
     font-size: 1.8rem;
 }
+@media screen and (max-width: 1024px) {
+    .index-counters > div {
+        margin: 1.2rem 1.75rem;
+    }
+    .index-counters > div > a {
+        font-size: 2.0rem;
+    }
+    .index-counters > div > div {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 568px) {
+    .index-counters > div {
+        margin: 1rem 1rem;
+    }
+    .index-counters > div > a {
+        font-size: 1.7rem;
+    }
+    .index-counters > div > div {
+        font-size: 1.0rem;
+    }
+}
 
 .index-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 4.25rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .index-cards > div {
     width: 15rem;
     margin-right: 1.5rem;
+    margin-bottom: 1rem;
     background-color: #f8fafc;
     border: #e2e8f0 solid 1px;
     border-radius: 0.5rem;
@@ -334,9 +370,11 @@ h1.index-header {
 }
 .footer-ng a {
     color: #ffffff !important;
+    text-wrap: nowrap;
 }
 .footer-ng-copyright {
     display: flex;
+    text-align: left;
 }
 .footer-ng-copyright-text {
     flex-grow: 1;
