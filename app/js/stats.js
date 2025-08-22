@@ -2,10 +2,6 @@ var settings = require('./settings');
 // FIXME var { locale } = require('./i18n_init');
 var { CountUp } = require('countup.js');
 
-var collectory = settings.services.collectory.url;
-var biocacheService = settings.services.biocacheService.url;
-
-
 var setCounter = (id, val, onEnd) => {
   const options = {
     separator: ',', // FIXME  locale === 'en' ? ',': '.',
@@ -16,7 +12,7 @@ var setCounter = (id, val, onEnd) => {
     val = 123456;
   }
   options.startVal = Math.round(val - val * 4/100); // we increment only a %
-  console.log(`Start val ${options.startVal} to ${val}`);
+  //console.log(`Start val ${options.startVal} to ${val}`);
   const countUp = new CountUp(id, val, options);
   if (!countUp.error) {
     countUp.start(() => { $(`#${id}`).addClass('loaded_stats'); if (typeof onEnd !== 'undefined') onEnd(); });
@@ -25,32 +21,12 @@ var setCounter = (id, val, onEnd) => {
   }
 };
 
-var getStats = (url, callback) => {
-  if (settings.isDevel) {
-    if (url.indexOf('species') > -1) callback([{ count: 10402 }]);
-    else callback({ totalRecords: 86965283, total: 12922 });
-  } else {
-    // Real call in production
-    $.getJSON(url, callback);
-  }
-}
-
-// If you want to show collections stats:
-// `${collectory}/ws/dataResource/count`
 var loadStats = () => {
-  getStats(`${biocacheService}/occurrences`, (data) => {
-    setCounter('stats_occurrences', data.totalRecords, () =>
-      getStats(`${collectory}/ws/dataResource/count`, (data) => {
-        setCounter('stats_datasets', data.total, () =>
-          getStats(`${collectory}/ws/institution/count`, (data) => {
-            setCounter('stats_institutions', data.total);
-          })
-        )
-      })
-    )});
-  // Right now this is slow so we put here
-  getStats(`${biocacheService}/occurrence/facets?q=*:*&facets=species&pageSize=0`, (data) => {
-    setCounter("stats_species", data[0].count);
+  $.getJSON("https://new.biodiversitydata.se/assets/counts.json", data => {
+    setCounter('stats_occurrences', data.occurrence_records.count);
+    setCounter('stats_datasets', data.datasets.count);
+    setCounter('stats_institutions', data.institutions.count);
+    setCounter('stats_species', data.species.count);
   });
 }
 

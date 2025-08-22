@@ -374,7 +374,7 @@ ul.nav-tabs {
         border-radius: 0;
     }
     #menu-nested-pages-main-menu {
-        margin: 0 8.5rem 0 0;
+        margin: 0 3rem 0 0;
     }
 }
 
@@ -657,22 +657,6 @@ select.input-sm,
     #header-search-box .form-group {
         margin-bottom: .25rem;
     }
-}
-
-.signedIn>a.signUpBtn {
-    display: none;
-}
-
-.signedOut>a.myProfileBtn {
-    display: none;
-}
-
-.signedIn>a.loginBtn {
-    display: none;
-}
-
-.signedOut>a.logoutBtn {
-    display: none;
 }
 
 #loading-bar .bar,
