@@ -130,7 +130,8 @@ exports.plugins = {
       { files: toReplaceOthers, match: { find: '::imagesURL::', replace: settings.services.images.url }},
 
       // And just for testing:
-      { files: toReplace, match: { find: '::loginStatus::', replace:  process.env.NODE_ENV === 'development' ? 'signedIn': '::loginStatus::' }}
+      // SBDI-MB: This is just confusing, so commented out for now
+      //{ files: toReplace, match: { find: '::loginStatus::', replace:  process.env.NODE_ENV === 'development' ? 'signedIn': '::loginStatus::' }}
 
     ]
   },

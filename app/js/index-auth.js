@@ -1,6 +1,6 @@
 var Cookies = require("js-cookie");
 const settings = require("js/settings");
-const authCookieName = "ALA-Auth";
+const authCookieName = "ALA-Auth-user";
 const loginClass = "signedIn";
 const logoutClass = "signedOut";
 
@@ -20,6 +20,7 @@ var loginStatusInIndex = () => {
       domain: settings.mainDomain,
       path: "/",
     });
+    /* SBDI-MB: This is just confusing, so commented out for now
     var in30Minutes = 1 / 48;
 
     if (
@@ -29,10 +30,12 @@ var loginStatusInIndex = () => {
       console.log("We set a test cookie if we are in development");
       Cookies.set(authCookieName, "/", { expires: in30Minutes });
     }
-
+    */
     if (typeof authCookie !== "undefined") {
       // https://github.com/AtlasOfLivingAustralia/ala-bootstrap3/blob/master/grails-app/taglib/au/org/ala/bootstrap3/HeaderFooterTagLib.groovy
       if (settings.isDevel) console.log("Auth cookie present so logged in");
+      var userFields = authCookie.split("|");
+      console.log("User info from cookie: ", userFields);
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
