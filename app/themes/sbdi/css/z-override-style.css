@@ -516,42 +516,11 @@ nav.hide-on-desktop .navbar-nav>.open>a, nav.hide-on-desktop .navbar-nav>.open>a
 
 
 
-footer,
 header {
     /* font-size: 1.175rem; */
     font-size: 1.145rem;
 }
 
-footer h4 {
-    line-height: 1.5;
-}
-
-footer .footer-copyright,
-footer .footer-copyright,
-.text-muted {
-    color    : #fff;
-    padding  : 0;
-    font-size: 1rem;
-}
-
-footer .footer-copyright {
-    background-color: transparent;
-}
-
-footer .footer-bottom {
-    padding: 0;
-}
-
-footer {
-    bottom: 0;
-    z-index: 9 !important;
-}
-
-@media (max-width: 768px) {
-    #site-footer .footer--row .builder-item--footer-1, #site-footer .builder-item.builder-item--group .item--inner.builder-item--footer-1 {
-        margin-left: 0;
-    }
-}
 
 .hoverRow td,
 tr.hoverRow:nth-child(2n) td,
