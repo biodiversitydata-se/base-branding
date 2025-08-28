@@ -34,8 +34,6 @@ var loginStatusInIndex = () => {
     if (typeof authCookie !== "undefined") {
       // https://github.com/AtlasOfLivingAustralia/ala-bootstrap3/blob/master/grails-app/taglib/au/org/ala/bootstrap3/HeaderFooterTagLib.groovy
       if (settings.isDevel) console.log("Auth cookie present so logged in");
-      var userFields = authCookie.split("|");
-      console.log("User info from cookie: ", userFields);
       $("#dropdown-auth-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
