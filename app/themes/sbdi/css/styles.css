@@ -224,6 +224,7 @@ a.item--button:hover {
 .banner-link {
     flex-basis: 50%;
     text-align: right;
+    font-size: 1.1rem;
     color: var(--primary-sbdi-darkblue);
 }
 .banner-link:hover {
@@ -236,28 +237,45 @@ a.item--button:hover {
     width: 120px  
 }
 
-#searchIcon {
-    padding-top: 20px; 
-    padding-bottom: 18px;
+.navbar {
+    min-height: auto;
 }
-#searchForm {
-    position: absolute;
-    margin-left: -27em;
+.navbar .navbar-collapse {
+    float: right;
 }
-#searchForm input {
-    width: 30em;
-    border-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+.navbar-default {
+    background-color: var(--primary-sbdi-mediumblue);
+    border: none;
 }
-.banner-user-icon {
-    padding-top: 20px !important;
-    padding-bottom: 18px !important;
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: var(--primary-sbdi-darkblue, #004767);
+    color: #fff;
+}
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:hover, 
+.navbar-default .navbar-nav>.open>a:focus {
+    background-color: var(--primary-sbdi-darkblue, #004767);
+    color: #fff;
+}
+@media (min-width: 992px) {
+    .navbar-nav>li>a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+.navbar input[name='q'] {
+    width: 20rem;
+    border: none;
+    box-shadow: none;
 }
 
 h1.index-header {
-    margin-top: 5rem;
+    margin-top: 4rem;
     text-align: center;
     color: var(--primary-sbdi-darkblue);
 }

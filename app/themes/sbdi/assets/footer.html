@@ -23,23 +23,4 @@
     // Allow to move with PgUp/Down the main contain without having to focus manually
     $("#main_content").trigger("focus");
   }
-
-  // Set up search box in header
-  const searchIcon = document.getElementById('searchIcon');
-  const searchForm = document.getElementById('searchForm');
-
-  searchIcon.addEventListener('click', (e) => {
-    e.preventDefault();
-    searchForm.classList.toggle('hidden');
-    searchIcon.classList.toggle('bg-sbdi-darkblue');
-    searchForm.querySelector("input[name='q']").focus();
-  });
-
-  // Close search box when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!searchIcon.contains(e.target) && !searchForm.contains(e.target)) {
-      searchForm.classList.add('hidden');
-      searchIcon.classList.remove('bg-sbdi-darkblue');
-    }
-  });
 </script>
