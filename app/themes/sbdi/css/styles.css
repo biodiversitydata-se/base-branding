@@ -73,17 +73,6 @@ h6,
     font-weight: 500;
 }
 
-.site-branding .site-title,
-.site-branding .site-title a {
-    font-family: "Roboto";
-    font-weight: normal;
-}
-
-.site-branding .site-description {
-    font-family: "Roboto";
-    font-weight: normal;
-}
-
 .entry-content h1,
 .wp-block h1,
 .entry-single .entry-title {
@@ -157,34 +146,8 @@ h6,
     display: none !important;
 }
 
-.builder-header-html-item.item--html p,
-.builder-header-html-item.item--html {
-    font-family   : "Roboto";
-    font-weight   : normal;
-    text-transform: none;
-    font-size     : 18px;
-}
-
 .header--row:not(.header--transparent) .menu-mobile-toggle {
     color: #ffffff;
-}
-
-.header-search_icon-item .header-search-modal {
-    border-style: solid;
-}
-
-.header-search_icon-item .search-field {
-    border-style: solid;
-}
-
-.header-search_box-item .search-form-fields {
-    font-size: 14px;
-}
-
-.dark-mode .header-search_box-item .search-form-fields,
-.header-search_box-item .search-form-fields {
-    background-color: rgba(0, 71, 103, 0.1);
-    border-style    : solid;
 }
 
 .builder-item--primary-menu .nav-icon-angle {
@@ -235,12 +198,44 @@ a.item--button:hover {
     background-color: var(--primary-sbdi-darkblue);
 }
 
-.banner-portals {
-    margin-top: 1em;
+.banner-desktop {
+    display: flex;
+    align-items: start;
+    margin: 0.8rem 0 0.4rem;
 }
-.banner-portals a {
+.banner-logo {
+    flex-basis: 50%;
+}
+.banner-logo p {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.banner-logo a {
+    display: inline-block;
+}
+.banner-logo img {
+    width: 120px;
+    display: block;
+}
+.banner-link {
+    flex-basis: 50%;
+    text-align: right;
     color: var(--primary-sbdi-darkblue);
 }
+.banner-link:hover {
+    color: var(--primary-sbdi-darkblue);
+}
+.banner-mobile {
+    margin: 0.8rem;
+}
+.banner-mobile img {
+    width: 120px  
+}
+
 #searchIcon {
     padding-top: 20px; 
     padding-bottom: 18px;
@@ -416,14 +411,6 @@ footer a:hover {
     text-align: left;
 }
 
-.site-header .site-branding img {
-    max-width: 120px;
-}
-
-.site-header .cb-row--mobile .site-branding img {
-    width: 120px;
-}
-
 .header--row .builder-item--logo,
 .builder-item.builder-item--group .item--inner.builder-item--logo {
     margin-top   : 10px;
@@ -435,42 +422,6 @@ footer a:hover {
 }
 
 .header--row .builder-first--nav-icon {
-    text-align: right;
-}
-
-.header-search_icon-item .search-submit {
-    margin-left: -40px;
-}
-
-.header-search_box-item .search-form-fields,
-.header-search_box-item .search-form-fields .search-field {
-    height: 32px;
-}
-
-.header-search_box-item .search-submit svg,
-.header-search_box-item .header-search-form button.search-submit svg {
-    height: 16px;
-    width : 16px;
-}
-
-.header-search_box-item .search-submit {
-    margin-left: -32px;
-}
-
-.header-search_box-item .woo_bootster_search .search-submit {
-    margin-left: -32px;
-}
-
-.header-search_box-item .header-search-form button.search-submit {
-    margin-left: -32px;
-}
-
-.header--row .builder-item--search_box,
-.builder-item.builder-item--group .item--inner.builder-item--search_box {
-    margin-bottom: -40px;
-}
-
-.header--row .builder-first--search_box {
     text-align: right;
 }
 
@@ -504,22 +455,6 @@ footer a:hover {
     .header--row .builder-first--nav-icon {
         text-align: right;
     }
-
-    .header-search_icon-item .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .woo_bootster_search .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .header-search-form button.search-submit {
-        margin-left: -40px;
-    }
 }
 
 /* CSS for mobile */
@@ -551,21 +486,5 @@ footer a:hover {
 
     .header--row .builder-first--nav-icon {
         text-align: right;
-    }
-
-    .header-search_icon-item .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .woo_bootster_search .search-submit {
-        margin-left: -40px;
-    }
-
-    .header-search_box-item .header-search-form button.search-submit {
-        margin-left: -40px;
     }
 }

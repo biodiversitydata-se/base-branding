@@ -1,56 +1,31 @@
 <!-- site-banner -->
-
-<header id="masthead" class="site-header header-v1">
-  <div id="masthead-inner" class="site-header-inner">
-    <div class="header-main header--row layout-full-contained" id="cb-row--header-main" data-row-id="main"
-      data-show-on="desktop mobile">
-      <div class="header--row-inner header-main-inner light-mode">
-        <div class="customify-container">
-          <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-top">
-            <div class="customify-col-6_md-6_sm-6 builder-item builder-first--logo builder-item--group"
-              data-push-left="">
-              <div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
-                <div class="site-branding logo-bottom">
-                  <a href="https://biodiversitydata.se/" class="logo-link" rel="home" itemprop="url">
-                    <img class="site-img-logo" src="::headerFooterServer::/images/sbdi-logo-orginal-large.png"
-                      alt="Swedish Biodiversity Data Infrastructure">
-                  </a>
-                </div><!-- .site-branding -->
-              </div>
-              <div class="item--inner builder-item--html " data-section="header_html" data-item-id="html">
-                <div class="builder-header-html-item item--html">
-                  <p data-i18n="general.orgfullname"></p>
-                </div>
-              </div>
-            </div>
-            <div class="customify-col-6_md-6_sm-6 builder-item builder-first--search_box builder-item--group banner-portals" data-push-left="">
-              <a href="https://new.biodiversitydata.se/explore-data/">
-                <i class="fas fa-arrow-circle-right"></i>&nbsp;SBDI Portals and tools
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle">
-          <div class="customify-col-12_md-12_sm-12 builder-item builder-first--logo" data-push-left="">
-            <div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
-              <div class="site-branding logo-bottom">
-                <a href="https://biodiversitydata.se" class="logo-link" rel="home" itemprop="url">
-                  <img class="site-img-logo" src="::headerFooterServer::/images/sbdi-logo-orginal-large.png"
-                    alt="Swedish Biodiversity Data Infrastructure">
-                </a>
-              </div><!-- .site-branding -->
-            </div>
-          </div>
-        </div>
+<header>
+  <!-- Desktop banner-->
+  <div class="container hide-on-mobile hide-on-tablet">
+    <div class="banner-desktop">
+      <div class="banner-logo">
+        <a href="https://biodiversitydata.se/" title="Swedish Biodiversity Data Infrastructure">
+          <img src="/images/SBDI-rgb.svg" alt="Swedish Biodiversity Data Infrastructure">
+        </a>
+        <p data-i18n="general.orgfullname"></p>
       </div>
+      <a class="banner-link" href="https://new.biodiversitydata.se/explore-data/">
+        <i class="fas fa-arrow-circle-right"></i>&nbsp;SBDI Portals and tools
+      </a>
     </div>
   </div>
+  <!-- Mobile banner-->
+  <div class="hide-on-desktop banner-mobile">
+    <a href="https://biodiversitydata.se" title="Swedish Biodiversity Data Infrastructure">
+      <img src="/images/SBDI-rgb.svg" alt="Swedish Biodiversity Data Infrastructure">
+    </a>
+  </div>
 
-  <!-- TODO: fix localization data-i18n -->
+  <!-- Desktop navbar -->
   <div class="header-bottom header--row layout-full-contained hide-on-mobile hide-on-tablet" id="cb-row--header-bottom"
     data-row-id="bottom" data-show-on="desktop mobile">
     <div class="header--row-inner header-bottom-inner">
-      <div class="customify-container">
+      <div class="container">
         <div class="customify-grid cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle">
           <div class="customify-col-12_md-12_sm-12 builder-item builder-first--primary-menu" data-push-left="">
             <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary"
@@ -192,13 +167,11 @@
     </div>
   </div>
 
-
   </div>
 </header>
 
 
 <!-- Mobile Navbar  -->
-
 <nav class="navbar navbar-default hide-on-desktop">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -315,20 +288,6 @@
           </ul>
         </li>
       </ul>
-
-      <!-- Language selector if you don't whan a multilang site, remove it -->
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li id="dropdown-lang" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false"><span class="caret"></span></a>
-          <ul class="locale-switcher dropdown-menu dropdown-lang-menu">
-            <li class="locale-link" data-locale="en"><a class="en-locale-link" href="#"><span
-                  class="lang_link_en">English</span></a></li>
-            <li class="locale-link" data-locale="es"><a class="es-locale-link" href="#"><span
-                  class="lang_link_es">Español</span></a></li>            
-          </ul>
-        </li>
-      </ul> -->
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
