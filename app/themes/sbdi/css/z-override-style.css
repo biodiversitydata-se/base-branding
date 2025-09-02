@@ -438,12 +438,6 @@ ol.breadcrumb-list li:first-child {
     }
 }
 
-@media screen and (min-width: 992px) {
-    nav .nav>li.hide-on-desktop {
-        display: none;
-    }
-}
-
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: transparent;
@@ -462,12 +456,6 @@ ol.breadcrumb-list li:first-child {
     /* font-family: "FontAwesome";
         content   : "\f35d"; */
 }
-/* Active dropdown background color */
-nav.hide-on-desktop .navbar-nav>.open>a, nav.hide-on-desktop .navbar-nav>.open>a:hover, nav.hide-on-desktop .navbar-nav>.open>a:focus {
-    background-color: var(--primary-sbdi-darkblue, #004767);
-}
-
-
 
 .hoverRow td,
 tr.hoverRow:nth-child(2n) td,

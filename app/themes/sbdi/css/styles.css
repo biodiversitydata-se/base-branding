@@ -240,8 +240,10 @@ a.item--button:hover {
 .navbar {
     min-height: auto;
 }
-.navbar .navbar-collapse {
-    float: right;
+@media (min-width: 992px) {
+    .navbar .navbar-collapse {
+        float: right;
+    }
 }
 .navbar-default {
     background-color: var(--primary-sbdi-mediumblue);
