@@ -198,7 +198,7 @@ a.item--button:hover {
 
 .banner {
     display: flex;
-    margin: 0.8rem 0 0.4rem;
+    margin: 0.8rem 0;
 }
 .banner img {
     width: 120px;
@@ -207,7 +207,7 @@ a.item--button:hover {
     flex-grow: 1;
     align-self: flex-end;
     margin-left: 1rem;
-    margin-bottom: -5px;
+    margin-bottom: -6px;
     font-size: 1.3rem;
 }
 .banner a:hover {
