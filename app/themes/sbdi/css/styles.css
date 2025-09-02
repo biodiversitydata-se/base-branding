@@ -26,11 +26,11 @@ input[type="submit"]:not(.components-button):not(.customize-partial-edit-shortcu
 .nav-menu-desktop.style-full-height .primary-menu-ul>li.current-menu-ancestor>a,
 .nav-menu-desktop.style-full-height .primary-menu-ul>li>a:hover,
 .posts-layout .readmore-button:hover {
-    background-color: #004767;
+    background-color: #284966;
 }
 
 .posts-layout .readmore-button {
-    color: #004767;
+    color: #284966;
 }
 
 .pagination .nav-links>*:hover,
@@ -39,7 +39,7 @@ input[type="submit"]:not(.components-button):not(.customize-partial-edit-shortcu
 .entry-single .cat-links a:hover,
 .posts-layout .readmore-button,
 .posts-layout .readmore-button:hover {
-    border-color: #004767;
+    border-color: #284966;
 }
 
 body {
@@ -159,7 +159,7 @@ h6,
 .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul>li.current-menu-item>a,
 .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul>li.current-menu-ancestor>a,
 .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul>li.current-menu-parent>a {
-    background-color: #004767;
+    background-color: #284966;
     text-decoration: none;
 }
 
@@ -172,7 +172,7 @@ a.item--button {
 }
 
 a.item--button {
-    background-color          : #004767;
+    background-color          : #284966;
     border-style              : none;
     border-top-left-radius    : 4px;
     border-top-right-radius   : 4px;
@@ -213,7 +213,7 @@ a.item--button:hover {
     min-height: auto;
 }
 .navbar-default {
-    background-color: var(--primary-sbdi-mediumblue);
+    background-color: var(--primary-sbdi-blue);
     border: none;
 }
 .navbar-default .navbar-toggle .icon-bar {
@@ -230,13 +230,13 @@ a.item--button:hover {
 }
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-    background-color: var(--primary-sbdi-darkblue, #004767);
+    background-color: var(--primary-sbdi-darkblue);
     color: #fff;
 }
 .navbar-default .navbar-nav>.open>a, 
 .navbar-default .navbar-nav>.open>a:hover, 
 .navbar-default .navbar-nav>.open>a:focus {
-    background-color: var(--primary-sbdi-darkblue, #004767);
+    background-color: var(--primary-sbdi-darkblue);
     color: #fff;
 }
 .navbar-nav .open .dropdown-menu {

@@ -10,28 +10,28 @@ body {
 /* ALA Colour overrides
 ================================= */
 .color--dark-red {
-    color: #004767;
+    color: #284966;
 }
 .backgroundcolor--dark-red {
-    background-color: #004767;
+    background-color: #284966;
 }
 .color--green {
-    color: #6aa842;
+    color: #6ba942;
 }
 .backgroundcolor--green {
-    background-color: #6aa842;
+    background-color: #6ba942;
 }
 .color--medium-blue {
-    color: #93a4b2;
+    color: #94a5b2;
 }
 .backgroundcolor--medium-blue {
-    background-color: #93a4b2;
+    background-color: #94a5b2;
 }
 .color--mellow-red {
-    color: #93a4b2;
+    color: #94a5b2;
 }
 .backgroundcolor--mellow-red {
-    background-color: #93a4b2;
+    background-color: #94a5b2;
 }
 .color--primary-red {
     color: #284966;
@@ -52,10 +52,10 @@ body {
     background-color: #c7d031;
 }
 .color--apple {
-    color: #6aa842;
+    color: #6ba942;
 }
 .backgroundcolor--apple {
-    background-color: #6aa842;
+    background-color: #6ba942;
 }
 .color--flamingo {
     color: #58998f;
@@ -70,27 +70,19 @@ body {
     background-color: #284966;
 }
 .color-lochmara {
-    color: #93a4b2;
+    color: #94a5b2;
 }
 .background-lochmara {
-    background-color: #93a4b2;
+    background-color: #94a5b2;
 }
 
 /* New SBDI definitions */
 :root {
-    /* Buttons */
-    --primary-sbdi-darkblue  : #004767; 
-    /* Logo text blue */
-    --primary-sbdi-blue      : #284966;    
-    /* Button hover */ 
-    --primary-sbdi-mediumblue: #6691a4;
-    /*  */
-    --primary-sbdi-lightblue : #93a4b2;
-    /*  */
+    --primary-sbdi-darkblue  : #284966;
+    --primary-sbdi-blue      : #6691a4;
+    --primary-sbdi-lightblue : #94a5b2;
     --primary-sbdi-bluegreen : #58998f;
-    /*  */
-    --primary-sbdi-green     : #6aa842;
-    /*  */
+    --primary-sbdi-green     : #6ba942;
     --primary-sbdi-limegreen : #c7d031;
     
 }
@@ -115,7 +107,7 @@ span.btn,
 .btn-default,
 .btn-default.active,
 .gform_button {
-    background-color          : var(--primary-sbdi-darkblue, #004767) !important;;
+    background-color          : var(--primary-sbdi-darkblue) !important;;
     color                     : #fff !important;
     border-style              : none;
     border-top-left-radius    : 4px;
@@ -180,7 +172,7 @@ a.item--button:hover:active,
 #reset-map.btn:hover,
 #reset-map.btn:active,
 #reset-map.btn:hover:active {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4) !important;
+    background-color  : var(--primary-sbdi-blue) !important;
     color             : #fff !important;
     text-decoration   : none;
     -webkit-box-shadow: none;
@@ -206,8 +198,8 @@ a.item--button:active:focus,
 #downloads.btn:active:focus,
 #reset-map.btn:focus,
 #reset-map.btn:active:focus {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4) !important;
-    outline           : var(--primary-sbdi-darkblue, #004767) 1px dotted !important;
+    background-color  : var(--primary-sbdi-blue) !important;
+    outline           : var(--primary-sbdi-darkblue) 1px dotted !important;
     color             : #fff !important;;
     -webkit-box-shadow: none;
     box-shadow        : none;
@@ -218,7 +210,7 @@ button:not(.components-button):not(.customize-partial-edit-shortcut-button):hove
 input[type=button]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
 input[type=reset]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
 input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4);
+    background-color  : var(--primary-sbdi-blue);
     color             : #fff;
     text-decoration   : none;
     -webkit-box-shadow: none;
@@ -229,8 +221,8 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 input[type=button]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus,
 input[type=reset]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus,
 input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4);
-    outline           : var(--primary-sbdi-darkblue, #004767) 1px dotted;
+    background-color  : var(--primary-sbdi-blue);
+    outline           : var(--primary-sbdi-darkblue) 1px dotted;
     color             : #fff;
     -webkit-box-shadow: none;
     box-shadow        : none;
@@ -270,7 +262,7 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 
 #main-content .leaflet-container .leaflet-popup-pane a,
 #main-content .leaflet-container a {
-    color: var(--primary-sbdi-darkblue, #004767);
+    color: var(--primary-sbdi-darkblue);
 }
 #main .leaflet-control-container a {
     text-decoration: none;
@@ -306,7 +298,7 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 }
 
 .ui-autocomplete .ui-state-active {
-    background-color: var(--primary-sbdi-limegreen, #c7d031);
+    background-color: var(--primary-sbdi-limegreen);
 }
 
 button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
@@ -361,13 +353,13 @@ ol.breadcrumb-list li:first-child {
 tr.hoverRow:nth-child(2n) td,
 .hoverCell td,
 tr.hoverCell:nth-child(2n) td {
-    background-color: var(--primary-sbdi-mediumblue, #93a4b2);
+    background-color: var(--primary-sbdi-blue);
 }
 
 .dropdown-menu>.active>a,
 .dropdown-menu>.active>a:hover,
 .dropdown-menu>.active>a:focus {
-    background-color: var(--primary-sbdi-mediumblue, #93a4b2);
+    background-color: var(--primary-sbdi-blue);
 }
 
 #accordion {
@@ -376,7 +368,7 @@ tr.hoverCell:nth-child(2n) td {
 
 .pagination>li>a,
 .pagination>li>span {
-    color          : var(--primary-sbdi-darkblue, #004767);
+    color          : var(--primary-sbdi-darkblue);
     text-decoration: none;
 }
 #main .pagination>li>a {
@@ -389,8 +381,8 @@ tr.hoverCell:nth-child(2n) td {
 .pagination>.active>span,
 .pagination>.active>span:hover,
 .pagination>.active>span:focus {
-    background-color: var(--primary-sbdi-mediumblue, #93a4b2);
-    border-color    : var(--primary-sbdi-mediumblue, #93a4b2);
+    background-color: var(--primary-sbdi-blue);
+    border-color    : var(--primary-sbdi-blue);
 }
 
 /* button disabled styles */
@@ -441,7 +433,7 @@ select.input-sm,
 }
 
 .form-control:focus {
-    border-color: var(--primary-sbdi-limegreen, #c7d031) !important;
+    border-color: var(--primary-sbdi-limegreen) !important;
 }
 
 #loading-bar .bar,
@@ -451,12 +443,12 @@ select.input-sm,
 .progress-bar-success,
 .progress-bar-info,
 .progress-bar-warning {
-    background-color: var(--primary-sbdi-green, #6aa842) !important;
+    background-color: var(--primary-sbdi-green) !important;
 }
 
 /* Collectory overrides (admin pages) */
 .btn .mainLink {
-    background-color: var(--primary-sbdi-darkblue,#004767) !important;
+    background-color: var(--primary-sbdi-darkblue) !important;
     color: #fff !important;
     border-style: none;
     border-top-left-radius: 4px;
@@ -492,9 +484,9 @@ form#filterRefineForm button.btn a {
 
 /* Regions overrides */
 tr.groupSelected, tr.groupSelected td, tr.groupSelected:hover td {
-    background-color: var(--primary-sbdi-mediumblue) !important;
+    background-color: var(--primary-sbdi-blue) !important;
 }
 
 tr.speciesSelected, tr.speciesSelected td, tr.speciesSelected:hover td {
-    background-color: var(--primary-sbdi-mediumblue) !important;
+    background-color: var(--primary-sbdi-blue) !important;
 }
