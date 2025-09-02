@@ -239,6 +239,9 @@ a.item--button:hover {
     background-color: var(--primary-sbdi-darkblue, #004767);
     color: #fff;
 }
+.navbar-nav .open .dropdown-menu {
+    background-color: #fff;
+}
 .navbar input[name='q'] {
     width: 20rem;
     border: none;
