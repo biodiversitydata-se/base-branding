@@ -193,48 +193,25 @@ a.item--button:hover {
     background-color: rgba(238, 238, 238, 0.5);
 }
 
-/* Nextgen */
-.bg-sbdi-darkblue {
-    background-color: var(--primary-sbdi-darkblue);
-}
+/** Nextgen **/
+/* Banner */
 
-.banner-desktop {
+.banner {
     display: flex;
-    align-items: start;
     margin: 0.8rem 0 0.4rem;
 }
-.banner-logo {
-    flex-basis: 50%;
-}
-.banner-logo p {
-    display: inline-block;
-    vertical-align: bottom;
-    margin-left: 1rem;
-    margin-bottom: 0;
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-.banner-logo a {
-    display: inline-block;
-}
-.banner-logo img {
+.banner img {
     width: 120px;
-    display: block;
 }
-.banner-link {
-    flex-basis: 50%;
-    text-align: right;
-    font-size: 1.1rem;
+.banner p {
+    flex-grow: 1;
+    align-self: flex-end;
+    margin-left: 1rem;
+    margin-bottom: -5px;
+    font-size: 1.3rem;
+}
+.banner a:hover {
     color: var(--primary-sbdi-darkblue);
-}
-.banner-link:hover {
-    color: var(--primary-sbdi-darkblue);
-}
-.banner-mobile {
-    margin: 0.8rem;
-}
-.banner-mobile img {
-    width: 120px  
 }
 
 .navbar {
@@ -276,6 +253,7 @@ a.item--button:hover {
     box-shadow: none;
 }
 
+/* Index page */
 h1.index-header {
     margin-top: 4rem;
     text-align: center;
@@ -371,6 +349,7 @@ h1.index-header {
     color: var(--primary-sbdi-darkblue);
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-sbdi-darkblue);
     color: #ffffff;

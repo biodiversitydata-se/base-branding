@@ -34,18 +34,12 @@ var loginStatusInIndex = () => {
     if (typeof authCookie !== "undefined") {
       // https://github.com/AtlasOfLivingAustralia/ala-bootstrap3/blob/master/grails-app/taglib/au/org/ala/bootstrap3/HeaderFooterTagLib.groovy
       if (settings.isDevel) console.log("Auth cookie present so logged in");
-      $("#dropdown-auth-menu")
-        .removeClass("::loginStatus::")
-        .addClass("signedIn");
         $("#user-menu")
         .removeClass("::loginStatus::")
         .addClass("signedIn");
     } else {
       if (settings.isDevel)
         console.log("No auth cookie not present so not-logged in");
-      $("#dropdown-auth-menu")
-        .removeClass("::loginStatus::")
-        .addClass("signedOut");
         $("#user-menu")
         .removeClass("::loginStatus::")
         .addClass("signedOut");
@@ -58,7 +52,7 @@ var loginStatusInIndex = () => {
 $(function () {
   // wait til drawer elements are visible
   var checkExist = setInterval(function () {
-    if (window.jQuery && $("#dropdown-auth-menu").length) {
+    if (window.jQuery && $("#user-menu").length) {
       clearInterval(checkExist);
       loginStatusInIndex();
     } else {

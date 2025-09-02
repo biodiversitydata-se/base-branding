@@ -1,24 +1,17 @@
 <!-- site-banner -->
 <header>
-  <!-- Desktop banner-->
-  <div class="container hide-on-mobile hide-on-tablet">
-    <div class="banner-desktop">
-      <div class="banner-logo">
-        <a href="https://biodiversitydata.se/" title="Swedish Biodiversity Data Infrastructure">
-          <img src="::headerFooterServer::/images/SBDI-rgb.svg" alt="Swedish Biodiversity Data Infrastructure">
-        </a>
-        <p data-i18n="general.orgfullname"></p>
-      </div>
-      <a class="banner-link" href="https://new.biodiversitydata.se/explore-data/">
+
+  <!-- Banner-->
+  <div class="container">
+    <div class="banner">
+      <a href="https://biodiversitydata.se/" title="Swedish Biodiversity Data Infrastructure">
+        <img src="::headerFooterServer::/images/SBDI-rgb.svg" alt="Swedish Biodiversity Data Infrastructure">
+      </a>
+      <p data-i18n="general.orgfullname"></p>
+      <a class="hidden-xs" href="https://new.biodiversitydata.se/explore-data/">
         <i class="fas fa-arrow-circle-right"></i>&nbsp;SBDI Portals and tools
       </a>
     </div>
-  </div>
-  <!-- Mobile banner-->
-  <div class="hide-on-desktop banner-mobile">
-    <a href="https://biodiversitydata.se" title="Swedish Biodiversity Data Infrastructure">
-      <img src="::headerFooterServer::/images/SBDI-rgb.svg" alt="Swedish Biodiversity Data Infrastructure">
-    </a>
   </div>
 
   <!-- Navbar -->
@@ -74,8 +67,8 @@
           </li>
           <li class="dropdown">
             <a href="#" id="search-icon" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="visible-xs-inline visible-sm-inline">Search <span class="caret"></span>
-              <i class="visible-md-inline visible-lg-inline fas fa-search"></i>
+              <span class="visible-xs-inline visible-sm-inline">Search</span>
+              <i class="visible-md-inline visible-lg-inline fas fa-search"></i> <span class="caret"></span>
             </a>
             <form id="search-form" class="dropdown-menu" method="get" action="::searchServer::::searchPath::">
               <input id="autocompleteHeader" name="q" class="form-control" type="text" data-i18n="[placeholder]nav.searchbox">
@@ -83,8 +76,8 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="visible-xs-inline visible-sm-inline">User <span class="caret"></span>
-              <i class="visible-md-inline visible-lg-inline fas fa-user"></i>
+              <span class="visible-xs-inline visible-sm-inline">User</span>
+              <i class="visible-md-inline visible-lg-inline fas fa-user"></i> <span class="caret"></span>
             </a>
             <ul id="user-menu" class="dropdown-menu ::loginStatus::">
               <li><a class="loginBtn" href="::loginURL::">Login</a></li>
@@ -92,6 +85,9 @@
               <li><a class="myProfileBtn" href="::casURL::/userdetails/myprofile/">My profile</a></li>
               <li><a class="logoutBtn" href="::logoutURL::">Logout</a></li>
             </ul>
+          </li>
+          <li class="visible-xs-inline">
+            <a href="https://new.biodiversitydata.se/explore-data/">SBDI Portals and tools</a>
           </li>
         </ul>
       </div>
