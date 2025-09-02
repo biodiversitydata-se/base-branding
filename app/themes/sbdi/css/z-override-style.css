@@ -244,30 +244,6 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     color: #fff;
 }
 
-.customify-builder-btn {
-    background-color: var(--primary-sbdi-darkblue, #004767);
-}
-
-.customify-builder-btn:hover {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4);
-    color             : #fff;
-    text-decoration   : none;
-    -webkit-box-shadow: none;
-    box-shadow        : none;
-}
-
-.customify-builder-btn:focus {
-    background-color  : var(--primary-sbdi-mediumblue, #6691a4);
-    outline           : var(--primary-sbdi-darkblue, #004767) 1px dotted;
-    color             : #fff;
-    -webkit-box-shadow: none;
-    box-shadow        : none;
-}
-
-.customify-builder-btn {
-    letter-spacing: initial;
-}
-
 #main button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
     margin: 0.2rem;
 }
@@ -305,7 +281,7 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     text-decoration: none;
 }
 
-.btn .btn-default .navbar-default .navbar-nav>li>a {
+.btn .btn-default {
     color            : #FFF;
     display          : -webkit-inline-box;
     display          : inline-flex;
@@ -316,46 +292,11 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     text-decoration: none;
 }
 
-ul.nav-tabs {
-    margin-left: 0;
-}
-
 @media (min-width: 992px) {
     #banner-head-buttons {
         min-width    : 30rem;
         margin-bottom: 0;
     }
-
-    #bs-example-navbar-collapse-1,
-    #bs-example-navbar-collapse-1 {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 991px) {
-    .navbar-nav .open .dropdown-menu {
-        background-color: #fff;
-    }
-}
-
-.navbar-default .navbar-nav>li>a:focus {
-    color: #FFF;
-}
-
-.navbar-default .navbar-brand,
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #FFF;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFF;
-}
-
-
-.navbar-form {
-    border-top   : 0 none transparent;
-    border-bottom: 0 none transparent;
 }
 
 @media (min-width: 992px) {
@@ -414,47 +355,6 @@ section#breadcrumb li + li::before {
 
 ol.breadcrumb-list li:first-child {
     font-weight: 500;
-}
-
-.nav-menu-desktop .menu-item.focus>.sub-lv-0, .nav-menu-desktop .menu-item.focus>.sub-menu, .nav-menu-desktop .menu-item:focus>.sub-lv-0, .nav-menu-desktop .menu-item:focus>.sub-menu, .nav-menu-desktop .menu-item:hover>.sub-lv-0, .nav-menu-desktop .menu-item:hover>.sub-menu {
-    z-index: 1500;
-}
-
-/* @media (min-width: 1024px) */
-@media (min-width: 992px) {
-    .navbar-header button.navbar-toggle {
-        display: none;
-    }
-    .nav-menu-desktop .menu>li>a {
-        padding: 12px 13px 12px;
-        display: -webkit-inline-box;
-        display: inline-flex;
-        -webkit-box-align: center;
-        align-items: center;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: .85em;
-        line-height: 1;
-    }
-}
-
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: transparent;
-}
-
-/* divider in nav-menu */
-.nav-menu-desktop .sub-menu li.menu-item-bottom-divider {
-    /*   padding-bottom: 0.5rem;
-      margin-bottom:0.5rem; */
-    border-bottom: 1px dotted #abccc7;
-}
-
-/* Adds icon to nav-menu link */
-.nav-menu-desktop .sub-menu li.menu-item-external-link a span.link-before::after {
-    padding-left  : 10px;
-    /* font-family: "FontAwesome";
-        content   : "\f35d"; */
 }
 
 .hoverRow td,
