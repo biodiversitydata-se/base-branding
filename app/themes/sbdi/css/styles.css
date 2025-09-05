@@ -282,6 +282,7 @@ a.item--button:hover {
 
 .navbar {
     min-height: auto;
+    border-radius: 0;
 }
 .navbar-default {
     background-color: var(--primary-sbdi-blue);
