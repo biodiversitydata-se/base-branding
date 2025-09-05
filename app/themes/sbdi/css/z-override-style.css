@@ -96,6 +96,7 @@ body {
 }
 
 a.item--button,
+.button,
 #zoomTo.btn,
 #reset-map.btn,
 #downloads.btn,
@@ -118,6 +119,7 @@ span.btn,
     font-style                : normal;
     font-size                 : 1rem;
     font-weight               : 500;
+    line-height               : 1.61em;
     text-transform            : none;
     text-decoration           : none !important;
 }
@@ -242,8 +244,8 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 
 #main button.dropdown-toggle:not(.components-button):not(.customize-partial-edit-shortcut-button) {
     margin     : 0;
-    min-height : 2em;
-    line-height: 2em
+    min-height : 2.4em;
+    line-height: 2.4em
 }
 
 #main .filter-buttons a {
@@ -284,6 +286,10 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     text-decoration: none;
 }
 
+ul.nav-tabs {
+    margin-left: 0;
+}
+
 @media (min-width: 992px) {
     #banner-head-buttons {
         min-width    : 30rem;
@@ -302,9 +308,10 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
 }
 
 button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
-    min-height   : 2.4em;
-    line-height  : 2.4em;
+    min-height: 2.4em;
+    line-height: 2.4em;
     border-radius: 4px;
+    padding: 0 1.3em;
 }
 
 ol.breadcrumb-list, section#breadcrumb {
