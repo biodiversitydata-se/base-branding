@@ -24,6 +24,9 @@ jobs:
       - name: Install brunch
         run: npm install -g brunch
 
+      - name: Copy production settings
+        run: cp app/js/settings-prod.js app/js/settings.js
+
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
