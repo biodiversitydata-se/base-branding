@@ -44,7 +44,7 @@ const i18nOpts = {
   },
   whitelist: settings.enabledLangs,
   load: 'languageOnly', // 'es' o 'en', previously: 'all', // es-ES -> es, en-US -> en
-  debug: true,
+  debug: false,
   ns: 'common',
   defaultNS: 'common',
   saveMissing: true, // if true seems it's fails to getResourceBundle
@@ -95,7 +95,7 @@ i18nOpts.missingKeyHandler = function miss(lng, ns, key, defaultValue) {
 
 i18n.on('languageChanged', function (lng) {
   if (i18n.services.languageDetector) {
-    console.log(`On lang changed ${lng}`);
+    //console.log(`On lang changed ${lng}`);
     // Store in the cookie the selection
     i18n.services.languageDetector.cacheUserLanguage(lng);
   }
@@ -111,9 +111,9 @@ i18n.use(backend)
         console.error(err);
         return;
       }
-      console.log(`Language initialized: ${i18n.language}`);
+      //console.log(`Language initialized: ${i18n.language}`);
       jqueryI18next.init(i18n, $, { i18nName: 'i18next' } );
-      console.log('jquery i18next initialized');
+      //console.log('jquery i18next initialized');
       $("body").localize();
 
       $('.locale-link').on('click', function(e) {

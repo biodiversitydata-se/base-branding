@@ -6,5 +6,6 @@ require('./stats.js');
 require('./autocomplete-conf.js');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('LA skin initialized');
+  //console.log('LA skin initialized');
+  jQuery.migrateTrace = false;
 });
