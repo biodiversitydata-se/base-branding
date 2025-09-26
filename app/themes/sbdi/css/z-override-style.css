@@ -2,6 +2,10 @@ body {
     font-size: 1rem;
 }
 
+#main {
+    padding-top: 25px;
+}
+
 /* links underlined, exeptions below */
 #main a {
     text-decoration: underline;
@@ -95,7 +99,6 @@ body {
     width: 5%;
 }
 
-a.item--button,
 .button,
 #zoomTo.btn,
 #reset-map.btn,
@@ -145,21 +148,18 @@ span.btn-xs,
 }
 
 span.btn:hover,
-a.item--button:hover,
 .btn:hover,
 .btn-primary:hover,
 .btn-default:hover,
 .btn-default.active:hover,
 .gform_button:hover,
 span.btn:active,
-a.item--button:active,
 .btn:active:active,
 .btn-primary:active,
 .btn-default:active,
 .btn-default.active:active,
 .gform_button:active,
 span.btn:hover:active,
-a.item--button:hover:active,
 .btn:active:hover:active,
 .btn-primary:hover:active,
 .btn-default:hover:active,
@@ -181,14 +181,12 @@ a.item--button:hover:active,
     box-shadow        : none;
 }
 span.btn::hover:focus,
-a.item--button:focus,
 .btn:focus,
 .btn-primary:focus,
 .btn-default:focus,
 .btn-default.active:focus,
 .gform_button:focus,
 span.btn:hover:active:focus,
-a.item--button:active:focus,
 .btn:active:active:focus,
 .btn-primary:active:focus,
 .btn-default:active:focus,
@@ -207,11 +205,11 @@ a.item--button:active:focus,
     box-shadow        : none;
 }
 
-.button:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
-button:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
-input[type=button]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
-input[type=reset]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover,
-input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-button):hover {
+.button:hover,
+button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
     background-color  : var(--primary-sbdi-blue);
     color             : #fff;
     text-decoration   : none;
@@ -219,10 +217,10 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     box-shadow        : none;
 }
 
-.button:not(.components-button):not(.customize-partial-edit-shortcut-button):focus,
-input[type=button]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus,
-input[type=reset]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus,
-input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-button):focus {
+.button:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus {
     background-color  : var(--primary-sbdi-blue);
     outline           : var(--primary-sbdi-darkblue) 1px dotted;
     color             : #fff;
@@ -238,14 +236,12 @@ input[type=submit]:not(.components-button):not(.customize-partial-edit-shortcut-
     color: #fff;
 }
 
-#main button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
+#main button {
     margin: 0.2rem;
 }
 
-#main button.dropdown-toggle:not(.components-button):not(.customize-partial-edit-shortcut-button) {
-    margin     : 0;
-    min-height : 2.4em;
-    line-height: 2.4em
+#main button.dropdown-toggle {
+    margin: 0;
 }
 
 #main .filter-buttons a {
@@ -307,7 +303,7 @@ ul.nav-tabs {
     background-color: var(--primary-sbdi-limegreen);
 }
 
-button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
+button {
     min-height: 2.4em;
     line-height: 2.4em;
     border-radius: 4px;
