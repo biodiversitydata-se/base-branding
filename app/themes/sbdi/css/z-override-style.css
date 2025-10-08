@@ -294,13 +294,14 @@ span.btn:hover:active:focus,
 #reset-map.btn:active:focus {
     background-color  : var(--primary-sbdi-blue) !important;
     outline           : var(--primary-sbdi-darkblue) 1px dotted !important;
-    color             : #fff !important;;
+    color             : #fff !important;
     -webkit-box-shadow: none;
     box-shadow        : none;
 }
 
 .button:hover,
 button:hover,
+button.close:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
@@ -312,6 +313,7 @@ input[type=submit]:hover {
 }
 
 .button:focus,
+button.close:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus {
@@ -397,7 +399,8 @@ ul.nav-tabs {
     background-color: var(--primary-sbdi-limegreen);
 }
 
-button {
+button,
+button.close{
     min-height: 2.4em;
     line-height: 2.4em;
     border-radius: 4px;
