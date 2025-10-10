@@ -1,21 +1,22 @@
-var settings = require('./settings');
-var i18n = require('i18next');
-var jqueryI18next = require('jquery-i18next');
-var backend = require("i18next-http-backend");
-var lngDetector = require('i18next-browser-languagedetector');
-var cache = require('i18next-localstorage-cache');
-var Url = require('domurl');
-var Cookies = require('js-cookie');
+import settings from './settings';
+import i18n from 'i18next';
+import jqueryI18next from 'jquery-i18next';
+import backend from 'i18next-http-backend';
+import lngDetector from 'i18next-browser-languagedetector';
+import cache from 'i18next-localstorage-cache';
+import Url from 'domurl';
+import Cookies from 'js-cookie';
+import { mountCookieConsent } from './cookie-consent.js';
 
 // We use this backend as remote because subdomains.l-a.site should request to l-a.site domain
 const backOpts = {
   // Something like: https://vtatlasoflife.org/basic-brand-2020//locales/es/common
   // More options: https://github.com/i18next/i18next-http-backend
-  loadPath: "$_LOCALES_URL/locales/{{lng}}/{{ns}}", // in the original .json
+  loadPath: '$_LOCALES_URL/locales/{{lng}}/{{ns}}', // in the original .json
 
   // allow cross domain requests
   crossDomain: true,
-}
+};
 
 var currentUrl  = new Url;
 
@@ -26,7 +27,7 @@ const i18nOpts = {
   //  lng: 'es',
   fallbackLng: {
     zh: ['en'],
-    "sw-TZ": ['en'],
+    'sw-TZ': ['en'],
     default: ['en']
   },
   sendMissingTo: 'fallback',
@@ -105,7 +106,7 @@ i18n.on('languageChanged', function (lng) {
 i18n.use(backend)
     .use(lngDetector)
     .use(cache)
-    .init(i18nOpts, (err, t) => {
+    .init(i18nOpts, (err) => {
       // initialized and ready to
       if (err) {
         console.error(err);
@@ -114,7 +115,7 @@ i18n.use(backend)
       //console.log(`Language initialized: ${i18n.language}`);
       jqueryI18next.init(i18n, $, { i18nName: 'i18next' } );
       //console.log('jquery i18next initialized');
-      $("body").localize();
+      $('body').localize();
 
       $('.locale-link').on('click', function(e) {
         e.preventDefault();
@@ -144,20 +145,9 @@ i18n.use(backend)
       }
       */
 
-      // cookies eu consent
-      /* const cookiesOpt = {
-       *   cookieTitle: t('Uso de Cookies'),
-       *   cookieMessage: t('Utilizamos cookies para asegurar un mejor uso de nuestra web. Si continúas navegando, consideramos que aceptas su uso'),
-       *   showLink: false,
-       *   position: 'bottom',
-       *   linkText: 'Lee más',
-       *   linkRouteName: '/privacy',
-       *   acceptButtonText: t('Aceptar'),
-       *   html: false,
-       *   expirationInDays: 70,
-       *   forceShow: false
-       * };
-       */
-      // CookieConsent.init(cookiesOpt);
+      //mountCookieConsent(`https://l-a.site/${window.i18next.resolvedLanguage || 'en'}/put-your-cookies-page-here/`);
+      //console.log('Added cookie consent');
+
     });
+    window.i18next = i18n;
 }(jQuery));

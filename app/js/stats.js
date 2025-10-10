@@ -1,10 +1,14 @@
-var settings = require('./settings');
-// FIXME var { locale } = require('./i18n_init');
-var { CountUp } = require('countup.js');
+import settings from './settings';
+import { CountUp } from 'countup.js';
+import { isHomeFromAppOrigin } from './utils/origin.js';
+
+const lang = window.i18next.language;
+
+console.log('Current lang:', lang);
 
 var setCounter = (id, val, onEnd) => {
   const options = {
-    separator: ',', // FIXME  locale === 'en' ? ',': '.',
+    separator: lang === 'en' ? ',': '.',
     duration: 1
   };
   // If testing set some dummy value
@@ -22,17 +26,18 @@ var setCounter = (id, val, onEnd) => {
 };
 
 var loadStats = () => {
-  $.getJSON("https://new.biodiversitydata.se/assets/counts.json", data => {
+  $.getJSON('https://new.biodiversitydata.se/assets/counts.json', data => {
     setCounter('stats_occurrences', data.occurrence_records.count);
     setCounter('stats_datasets', data.datasets.count);
     setCounter('stats_institutions', data.institutions.count);
     setCounter('stats_species', data.species.count);
   });
-}
+};
 
-document.addEventListener("DOMContentLoaded", () => {
-  if ((document.location.origin === settings.mainLAUrl || document.location.host === 'localhost:3333') && document.location.pathname === '/' ) {
-    // only load stats on /
+document.addEventListener('DOMContentLoaded', () => {
+
+  if (isHomeFromAppOrigin(settings.mainLAUrl)) {
     loadStats();
   }
+
 });

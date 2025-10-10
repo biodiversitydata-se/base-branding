@@ -1,11 +1,7 @@
-require('./settings.js').default;
-require('./index-auth.js');
-require('./i18next-config.js');
-require('./mante.js');
-require('./stats.js');
-require('./autocomplete-conf.js');
-
-document.addEventListener('DOMContentLoaded', () => {
-  //console.log('LA skin initialized');
-  jQuery.migrateTrace = false;
-});
+import './settings.js';
+import './index-auth.js';
+import './i18next-config.js';
+import './mante.js';
+import './stats.js';
+import './autocomplete-conf.js';
+import 'url-polyfill'; // for URL() usage in older browsers
