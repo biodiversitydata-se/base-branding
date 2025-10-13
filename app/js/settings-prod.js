@@ -33,4 +33,7 @@ export default {
     { title: 'Datasets', url: 'https://collections.biodiversitydata.se/datasets' },
     { title: 'twitter', url: '', icon: 'twitter' },
   ],
+  analytics: {
+    googleId: 'UA-XXXXXXXX-1'
+  }
 };
