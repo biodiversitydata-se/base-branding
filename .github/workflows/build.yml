@@ -21,17 +21,14 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: Install brunch
-        run: npm install -g brunch
-
       - name: Copy production settings
         run: cp app/js/settings-prod.js app/js/settings.js
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: make deps
 
       - name: Build app
-        run: brunch build --production
+        run: make build
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
