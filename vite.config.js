@@ -170,7 +170,7 @@ export default defineConfig({
     viteStaticCopy({ targets: copyCommands }),
     injectThemeCssLinks(themeAssets),
     jscc({ values: { _LOCALES_URL: baseUrl, _DEBUG: 1 } }),
-    VitePluginRadar({ analytics: { id: settings.analytics.googleId } }),
+    //VitePluginRadar({ analytics: { id: settings.analytics.googleId } }),
   ],
   build: {
     rollupOptions: {
