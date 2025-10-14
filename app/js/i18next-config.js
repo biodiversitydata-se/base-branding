@@ -5,8 +5,8 @@ import backend from 'i18next-http-backend';
 import lngDetector from 'i18next-browser-languagedetector';
 import cache from 'i18next-localstorage-cache';
 import Url from 'domurl';
-import Cookies from 'js-cookie';
-import { mountCookieConsent } from './cookie-consent.js';
+//import Cookies from 'js-cookie';
+//import { mountCookieConsent } from './cookie-consent.js';
 
 // We use this backend as remote because subdomains.l-a.site should request to l-a.site domain
 const backOpts = {
@@ -20,7 +20,7 @@ const backOpts = {
 
 var currentUrl  = new Url;
 
-const laSessionCookie = 'la-lang-session';
+//const laSessionCookie = 'la-lang-session';
 
 const i18nOpts = {
   backend: backOpts,

@@ -47,7 +47,7 @@ var loginStatusInIndex = () => {
 $(function () {
   // wait til drawer elements are visible
   var checkExist = setInterval(function () {
-    if (window.jQuery && $("#user-menu").length) {
+    if (window.jQuery && $('#user-menu').length) {
       clearInterval(checkExist);
       loginStatusInIndex();
     } else {
