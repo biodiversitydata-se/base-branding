@@ -67,6 +67,12 @@
         padding-bottom: 12px;
     }
 }
+ul.signedIn > li > a.signUpBtn,
+ul.signedIn > li > a.loginBtn, 
+ul.signedOut > li > a.logoutBtn,
+ul.signedOut > li > a.myProfileBtn {
+  display: none;
+}
 
 /* Footer */
 footer {
