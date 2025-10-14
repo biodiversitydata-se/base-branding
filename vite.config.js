@@ -181,10 +181,7 @@ export default defineConfig({
         testPage: path.resolve(__dirname, 'testPage.html'),
         testSmall: path.resolve(__dirname, 'testSmall.html'),
         head: path.resolve(__dirname, 'head.html'),
-        // SBDI-MB:
-        // Commented out banner to avoid replacing ::loginURL:: and ::logoutURL:: in banner.html.
-        // It works but is probably not the best solution.
-        //banner: path.resolve(__dirname, 'banner.html'),
+        banner: path.resolve(__dirname, 'banner.html'),
         footer: path.resolve(__dirname, 'footer.html')
       },
       output: {
