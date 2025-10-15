@@ -102,17 +102,14 @@ function virtualGlobalCss() {
 
 function injectThemeCssLinks(theme) {
   const themePath = `app/themes/${theme}/css/*.css`;
-  const cssFiles = glob.sync(themePath, { onlyFiles: true });
-  const filesToSkip = [
-    /banner\.html$/, /footer\.html$/
-  ];
+  const files = glob.sync(themePath, { onlyFiles: true });
 
   return {
     name: 'inject-theme-css-links',
     transformIndexHtml(html, ctx) {
-      const doTransform = !filesToSkip.some(file => ctx.path.match(new RegExp(file)));
+      const doTransform = html.includes('<head>') || ctx.path.endsWith('head.html');
       const links = doTransform
-        ? cssFiles.map(file => ({
+        ? files.map(file => ({
             tag: 'link',
             attrs: {
               rel: 'stylesheet',
