@@ -102,8 +102,6 @@ This is using https://vite.dev instead of gulp and using [ALA commonui-bs3-2019]
 
 There is a experimental branch `vite` that uses [vitejs](https://vitejs.dev/) instead.
 
-There is a experimental branch `vite` that uses [vitejs](https://vitejs.dev/) instead.
-
 ### Usage
 
 ```
