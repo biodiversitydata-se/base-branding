@@ -21,7 +21,9 @@ export default function multiReplacePlugin(rules) {
       return rules.reduce(
         (acc, rule) => {
           const ruleAppliesToFile = rule.files.some(file => ctx.path.match(new RegExp(file)));
-          return ruleAppliesToFile ? acc.replace(new RegExp(rule.match.find, 'g'), rule.match.replace) : acc;
+          return ruleAppliesToFile
+            ? acc.replace(new RegExp(rule.match.find, 'g'), rule.match.replace)
+            : acc;
         },
         html
       );

@@ -67,7 +67,6 @@ const replacements = Object.fromEntries(
   Object.entries(fragmentFiles).map(([k, f]) => {
     let raw = fs.readFileSync(f, 'utf8');
     raw = prefixStaticUrls(raw, baseUrl);
-    //raw = applyRulesToText(raw, f);
     return [k, raw];
   })
 );
