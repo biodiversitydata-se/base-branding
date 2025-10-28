@@ -26,7 +26,7 @@ var setCounter = (id, val, onEnd) => {
 };
 
 var loadStats = () => {
-  $.getJSON('https://new.biodiversitydata.se/assets/counts.json', data => {
+  $.getJSON('https://biodiversitydata.se/assets/counts.json', data => {
     setCounter('stats_occurrences', data.occurrence_records.count);
     setCounter('stats_datasets', data.datasets.count);
     setCounter('stats_institutions', data.institutions.count);
