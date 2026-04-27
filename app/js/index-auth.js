@@ -1,6 +1,6 @@
 import settings from './settings.js';
 import Cookies from 'js-cookie';
-const authCookieName = 'ALA-Auth-user';
+const authCookieName = 'ALA-Auth';
 import { isHomeFromAppOrigin } from './utils/origin.js';
 
 var loginStatusInIndex = () => {
