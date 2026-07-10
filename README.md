@@ -155,6 +155,38 @@ In general you should use `main` or `generic` skin in your ALA modules. Some com
 
 [Here you have a table of skin layouts recommended](https://docs.google.com/spreadsheets/d/19rs1GuxZX2tRfm2x8YYf83fAcBrIG1gObIqVOV6C870/edit?usp=sharing), variables names, layouts used by ALA, links to code, etc.
 
+### Spatial Portal skin
+
+The Spatial Portal (`spatial-hub`) does **not** consume `head/banner/footer.html` like the other
+modules. Its default `portal` layout hardcodes the ALA logo and menu, and it runs as a fat WAR with
+precompiled GSPs, so that layout cannot be overridden by a volume mount. Instead spatial-hub's
+`BootStrap.groovy` registers an **external layout/asset resolver**: a layout GSP placed at
+`/data/spatial-hub/views/layouts/<name>.gsp` (plus assets at `/data/spatial-hub/assets/`) is used
+when `skin.layout=<name>`.
+
+So the build also generates a Spatial skin layout under `dist/spatial/`:
+
+```
+dist/spatial/
+  views/layouts/spatial-layout.gsp   # LA header; ::variable:: URLs baked in, ${grails...} kept
+```
+
+Source lives in [`app/spatial/spatial-layout.gsp`](app/spatial/spatial-layout.gsp) and is
+**hand-customisable**. Only `::variable::` URL tokens are substituted at build time; the map
+application's `<asset:*>` / `<g:*>` / `<hf:*>` / `<ala:*>` tags and `${grailsApplication...}`
+expressions are left untouched. The layout is a copy of spatial-hub 3.1.0 `portal.gsp` with just
+the header block replaced — re-sync the non-header parts if you bump spatial-hub.
+
+**No extra stylesheet is generated.** The header is a plain `navbar navbar-default`, so it reuses
+the commonui/ala styles that already exist — the spatial-hub WAR's `application.css` provides them
+(the same base every other module header uses), so it matches the site across all branding themes.
+
+Preview the header locally (Vite dev server, HMR) at
+[`testPageSpatial.html`](testPageSpatial.html) → `http://localhost:3333/testPageSpatial.html`.
+
+Deployment: la-docker-compose mounts `dist/spatial/views` from the branding volume into
+`/data/spatial-hub/views` and sets `skin.layout=spatial-layout` when `use_branding` is on.
+
 ## Why Vite?
 
 Vite provides an extremely fast development experience with:
@@ -243,7 +275,7 @@ ErrorDocument 503 https://l-a.site/errorPage.html, for instance;
 ## Caveats
 
 - If this header/footer/etc are used from `subdomains.your.l-a.site` you can not use relative urls. You should use like `https://your.l-a.site/img/someResource.png` instead of `img/someResource.png`. If you don't use absolute urls, `collectory` will try to access to `img/someResource.png` in their tomcat without success with `404` errors, and the same with the rest of tools.
-- [ala-cas-5 layout ignores head.html](https://github.com/AtlasOfLivingAustralia/ala-cas-5/issues/29) right now.
+- [ala-cas-5 layout ignores head.html](https://github.com/AtlasOfLivingAustralia/ala-cas-5/issues/29) right now. Because of this, the branding JS is shipped as a single self-contained **classic** bundle `js/init.js` (a second `BUILD_INIT=1 vite build` IIFE pass) and injected into `banner.html` (the only fragment CAS includes) as a plain `<script src>` — no `type=module`, no `crossorigin` — so CAS can load it cross-origin from the skin host without CORS. ES-module scripts are always CORS-fetched and would be blocked here.
 - `collectory` has an old version of `ala-bootstrap3`.
 
 ## License

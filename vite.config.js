@@ -9,6 +9,45 @@ import eslintPlugin from 'vite-plugin-eslint';
 import { VitePluginRadar } from 'vite-plugin-radar';
 import glob from 'fast-glob';
 
+const buildTimestamp = Date.now();
+
+// ─── Banner / Head injection architecture ────────────────────────────────────
+//
+// ala-cas-5 Thymeleaf layout includes <ala:banner> and <ala:footer> but treats
+// <ala:head> as a no-op (https://github.com/AtlasOfLivingAustralia/ala-cas-5/issues/29).
+// CAS pages therefore never load head.html — only banner.html reaches them.
+//
+// All normal ALA application pages include banner.html via SSI as well, so
+// delivering init via banner gives exactly-once loading on every page including CAS.
+//
+// Build outputs
+// ─────────────
+//  dist/banner.html  ← injectInitToBody()       prepends css/init.css + js/init.js
+//                    ← injectThemeCssLinks()     prepends theme CSS <link> tags
+//
+//  dist/head.html    ← intentionally empty of init (CAS never fetches it)
+//
+//  dist/js/init.js   ← classic IIFE bundle (BUILD_INIT=1 pass)
+//                       stable filename — URL is baked into banner.html at build time
+//                       ?v=<timestamp> query string provides per-deploy cache busting
+//  dist/css/init.css ← same, companion stylesheet from the IIFE pass
+//
+// Dual build passes (package.json "build" script)
+// ────────────────────────────────────────────────
+//  Pass 1 (mainConfig): normal Vite build — ES modules with content-hashed filenames
+//          Used by the dev server (HMR) and as the source of truth for test HTML pages.
+//  Pass 2 (BUILD_INIT=1 → initLibConfig): lib/IIFE mode — emits js/init.js (stable)
+//          This is what banner.html references. Classic <script> (no type=module),
+//          no crossorigin attribute → loads cross-origin from the skin host without
+//          CORS headers, matching how ala-brunch delivered the script.
+//
+// Why `defer` on the injected <script>
+// ─────────────────────────────────────
+//  The CAS Thymeleaf layout loads jQuery via webjars with `defer`. Our init.js must
+//  also defer so that jQuery is available when init.js executes (avoids $ is not defined).
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
 const theme = settings.theme;
 const cleanBased = [
   'flatly', 'superhero', 'yeti', 'cosmo', 'darkly', 'paper', 'sandstone', 'simplex', 'slate'
@@ -17,7 +56,8 @@ const themeAssets = cleanBased || theme === 'clean' ? 'clean' : theme;
 const baseUrl = process.env.BASE_BRANDING_URL.replace(/\/+$|^\/+/, '');
 
 const toReplace = [
-  /index\.html$/, /errorPage\.html$/, /testPage\.html$/, /testPageCas\.html$/, /testSmall\.html$/
+  /index\.html$/, /errorPage\.html$/, /testPage\.html$/, /testPageCas\.html$/, /testSmall\.html$/,
+  /testPageSpatial\.html$/
 ];
 
 const toReplaceOthers = [
@@ -99,18 +139,21 @@ function virtualGlobalCss() {
   };
 }
 
-// Fragments that have no <body> and should NOT receive init scripts
+// Fragments with no <body> that must NOT receive the init script.
 const skipInjectionFragments = ['head.html', 'footer.html'];
 
-// Inject init bundle scripts so they load on every page — including CAS pages.
-// CAS doesn't load head.html, so scripts can't go there. Instead we inject them:
-//   • into <body> (body-prepend) for full HTML pages
-//   • at the top of banner.html (the fragment CAS always includes)
-// See: https://github.com/AtlasOfLivingAustralia/ala-cas-5/issues/29
+// Inject the branding JS so it loads on every page — including CAS pages.
+// CAS does NOT include head.html (https://github.com/AtlasOfLivingAustralia/ala-cas-5/issues/29),
+// so the script can only ride along in banner.html (the fragment CAS does
+// include). In production it is emitted as a single self-contained CLASSIC
+// (IIFE) bundle at the stable path js/init.js and injected as a plain
+// <script src> — no type=module, no crossorigin — so the CAS page can load it
+// cross-origin from the skin host WITHOUT CORS (matches the brunch behaviour).
 //
-// In dev mode: injects /app/js/init.js directly (Vite serves it unbundled).
-// In build mode: reads ctx.bundle to find the hashed init/vendor/polyfill
-// chunks and injects them with the correct URLs.
+// Prod: inject ONLY into banner.html — all pages include banner server-side, so
+// init loads exactly once everywhere (CAS included). No duplication.
+// Dev: inject into full pages (banner injection not applicable in dev mode).
+// Cache-busting via ?v=buildTimestamp query string (filename is stable, no hash).
 function injectInitToBody() {
   return {
     name: 'inject-init-to-body',
@@ -121,50 +164,28 @@ function injectInitToBody() {
         const shouldSkip = skipInjectionFragments.some(f => ctx.path.endsWith(f));
         if (shouldSkip) return html;
 
+        const prod = !!ctx.bundle;
         const isBannerFragment = ctx.path.endsWith('banner.html') && !html.includes('<body');
         const hasBody = html.includes('<body');
 
-        if (!isBannerFragment && !hasBody) return html;
+        // Prod: only banner.html (ALA apps + CAS include banner via SSI — no duplication)
+        // Dev:  full pages only (banner is inlined from source, SSI not applicable)
+        if (prod && !isBannerFragment) return html;
+        if (!prod && !hasBody) return html;
 
-        let scriptTags;
-
-        if (ctx.bundle) {
-          // Production build — find the hashed chunks from the bundle
-          const chunks = Object.values(ctx.bundle).filter(c => c.type === 'chunk');
-          const polyfill = chunks.find(c => c.name === 'modulepreload-polyfill');
-          const vendor   = chunks.find(c => c.name === 'vendor');
-          const init     = chunks.find(c => c.name === 'init');
-
-          scriptTags = [
-            polyfill && `<script type="module" crossorigin src="${baseUrl}/${polyfill.fileName}"></script>`,
-            vendor   && `<script type="module" crossorigin src="${baseUrl}/${vendor.fileName}"></script>`,
-            init     && `<script type="module" crossorigin src="${baseUrl}/${init.fileName}"></script>`,
-          ].filter(Boolean).join('\n');
-        } else {
-          // Dev server — Vite serves modules directly, no hashing needed
-          scriptTags = `<script type="module" src="/app/js/init.js"></script>`;
-        }
+        const src = prod ? `${baseUrl}/js/init.js?v=${buildTimestamp}` : '/app/js/init.js';
+        const cssSrc = prod ? `${baseUrl}/css/init.css?v=${buildTimestamp}` : null;
+        const attrs = prod ? { src, defer: true } : { type: 'module', src };
+        const cssTag = cssSrc ? `<link rel="stylesheet" href="${cssSrc}">` : '';
+        const scriptTag = prod
+          ? `<script src="${src}" defer></script>`
+          : `<script type="module" src="${src}"></script>`;
 
         if (isBannerFragment) {
-          // Prepend scripts to the fragment so CAS pages pick them up
-          return scriptTags + '\n' + html;
+          return cssTag + '\n' + scriptTag + '\n' + html;
         }
-
-        // Full HTML page — inject at body-prepend via Vite tag API
-        const injectTo = 'body-prepend';
-        const tags = [];
-        if (ctx.bundle) {
-          const chunks = Object.values(ctx.bundle).filter(c => c.type === 'chunk');
-          const polyfill = chunks.find(c => c.name === 'modulepreload-polyfill');
-          const vendor   = chunks.find(c => c.name === 'vendor');
-          const init     = chunks.find(c => c.name === 'init');
-          if (polyfill) tags.push({ tag: 'script', attrs: { type: 'module', crossorigin: true, src: `${baseUrl}/${polyfill.fileName}` }, injectTo });
-          if (vendor)   tags.push({ tag: 'script', attrs: { type: 'module', crossorigin: true, src: `${baseUrl}/${vendor.fileName}`   }, injectTo });
-          if (init)     tags.push({ tag: 'script', attrs: { type: 'module', crossorigin: true, src: `${baseUrl}/${init.fileName}`     }, injectTo });
-        } else {
-          tags.push({ tag: 'script', attrs: { type: 'module', src: '/app/js/init.js' }, injectTo });
-        }
-        return { html, tags };
+        // Dev: inject into body-prepend of full pages
+        return { html, tags: [{ tag: 'script', attrs, injectTo: 'body-prepend' }] };
       }
     }
   };
@@ -177,8 +198,17 @@ function injectThemeCssLinks(theme) {
   return {
     name: 'inject-theme-css-links',
     transformIndexHtml(html, ctx) {
-      const doTransform = html.includes('<head>') || ctx.path.endsWith('head.html');
-      const links = doTransform
+      const hasHead = html.includes('<head>') || ctx.path.endsWith('head.html');
+      // banner.html has no <head> but CAS only includes banner — inject theme CSS
+      // as raw prepended links so the CAS page gets the theme styles.
+      const isBannerFragment = ctx.path.endsWith('banner.html') && !html.includes('<body');
+      if (isBannerFragment && ctx.bundle) {
+        const rawLinks = files
+          .map(file => `<link rel="stylesheet" href="${baseUrl}/${file}" data-theme="${theme}">`)
+          .join('\n');
+        return rawLinks + '\n' + html;
+      }
+      const links = hasHead
         ? files.map(file => ({
             tag: 'link',
             attrs: {
@@ -214,6 +244,52 @@ function hotReloadFragments() {
   };
 }
 
+// Generate the Spatial Portal (spatial-hub) skin layout.
+//
+// spatial-hub runs as a fat WAR with precompiled GSPs, so its portal.gsp (hardcoded ALA
+// header) can't be overridden by a volume mount. Instead spatial-hub's BootStrap.groovy
+// registers an external views/assets resolver: a layout GSP dropped at
+//   /data/spatial-hub/views/layouts/<name>.gsp
+// is used when skin.layout=<name>. We emit such a layout with the ALA header replaced by a
+// Living Atlas navbar. Only ::variable:: URL tokens are substituted at build time; the GSP's
+// own ${grailsApplication...} expressions and <asset:*>/<g:*>/<hf:*>/<ala:*> tags are left
+// untouched (no prefixStaticUrls, no init/theme-CSS injection — those are for banner.html).
+//
+// Output: dist/spatial/views/layouts/spatial-layout.gsp
+// (the companion CSS is copied to dist/spatial/assets via copyCommands)
+function generateSpatialLayout() {
+  const srcGsp = 'app/spatial/spatial-layout.gsp';
+  return {
+    name: 'generate-spatial-layout',
+    apply: 'build',
+    closeBundle() {
+      if (process.env.BUILD_INIT) return; // only the main pass emits the skin
+      if (!fs.existsSync(srcGsp)) return;
+      const gsp = applyRulesToText(fs.readFileSync(srcGsp, 'utf8'));
+      const outDir = path.resolve(__dirname, 'dist/spatial/views/layouts');
+      fs.mkdirSync(outDir, { recursive: true });
+      fs.writeFileSync(path.join(outDir, 'spatial-layout.gsp'), gsp);
+    }
+  };
+}
+
+// Dev-only: full-reload the preview when the Spatial skin sources change. The header CSS is
+// served by vite-plugin-static-copy (outside Vite's module graph, so no automatic HMR); this
+// watches app/spatial/** and reloads so testPageSpatial.html reflects edits live.
+function hotReloadSpatial() {
+  const dir = path.resolve(__dirname, 'app/spatial');
+  return {
+    name: 'hot-reload-spatial',
+    apply: 'serve',
+    configureServer(server) {
+      server.watcher.add(dir);
+      server.watcher.on('change', file => {
+        if (path.resolve(file).startsWith(dir)) server.ws.send({ type: 'full-reload' });
+      });
+    }
+  };
+}
+
 const copyCommands = [
   { src: 'commonui-bs3-2019/build/js/*', dest: 'js' },
   { src: 'commonui-bs3-2019/build/css/*', dest: 'css' },
@@ -232,7 +308,29 @@ if (theme === 'material') {
   );
 }
 
-export default defineConfig({
+// Second build pass (BUILD_INIT=1): emit app/js/init.js as one standalone
+// classic IIFE bundle at the stable name js/init.js, keeping the main HTML
+// build output (emptyOutDir:false). This is what the banner injection points
+// to in production.
+const initLibConfig = defineConfig({
+  base: `${baseUrl}/`,
+  plugins: [jscc({ values: { _LOCALES_URL: baseUrl, _DEBUG: 1 } })],
+  build: {
+    emptyOutDir: false,
+    cssCodeSplit: false,
+    lib: {
+      entry: path.resolve(__dirname, 'app/js/init.js'),
+      formats: ['iife'],
+      name: 'AlaBranding',
+      fileName: () => 'js/init.js'
+    },
+    rollupOptions: {
+      output: { assetFileNames: () => 'css/init.css' }
+    }
+  }
+});
+
+const mainConfig = defineConfig({
   base: `${baseUrl}/`,
   assetsInclude: ['app/assets/*.ico', 'app/assets/images/*', 'app/assets/locales/**/*'],
   plugins: [
@@ -243,6 +341,8 @@ export default defineConfig({
     viteStaticCopy({ targets: copyCommands }),
     injectInitToBody(),
     injectThemeCssLinks(themeAssets),
+    generateSpatialLayout(),
+    hotReloadSpatial(),
     jscc({ values: { _LOCALES_URL: baseUrl, _DEBUG: 1 } }),
     //VitePluginRadar({ analytics: { id: settings.analytics.googleId } }),
   ],
@@ -255,6 +355,7 @@ export default defineConfig({
         testPage: path.resolve(__dirname, 'testPage.html'),
         testPageCas: path.resolve(__dirname, 'testPageCas.html'),
         testSmall: path.resolve(__dirname, 'testSmall.html'),
+        testPageSpatial: path.resolve(__dirname, 'testPageSpatial.html'),
         head: path.resolve(__dirname, 'head.html'),
         banner: path.resolve(__dirname, 'banner.html'),
         footer: path.resolve(__dirname, 'footer.html')
@@ -299,4 +400,6 @@ export default defineConfig({
     watch: { usePolling: true }
   }
 });
+
+export default process.env.BUILD_INIT ? initLibConfig : mainConfig;
 
