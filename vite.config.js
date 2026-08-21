@@ -174,7 +174,7 @@ function injectInitToBody() {
         if (!prod && !hasBody) return html;
 
         const src = prod ? `${baseUrl}/js/init.js?v=${buildTimestamp}` : '/app/js/init.js';
-        const cssSrc = prod ? `${baseUrl}/css/init.css?v=${buildTimestamp}` : null;
+        const cssSrc = null; //prod ? `${baseUrl}/css/init.css?v=${buildTimestamp}` : null;
         const attrs = prod ? { src, defer: true } : { type: 'module', src };
         const cssTag = cssSrc ? `<link rel="stylesheet" href="${cssSrc}">` : '';
         const scriptTag = prod
