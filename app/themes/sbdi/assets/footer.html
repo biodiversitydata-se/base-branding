@@ -22,4 +22,9 @@
   $('#search-dropdown').on('shown.bs.dropdown', function () {
     $('#autocompleteHeader').focus();
   });
+
+  if (window.location.hostname !== "auth.biodiversitydata.se" && 
+      window.location.hostname !== "lists.biodiversitydata.se") {
+    $('.beta-banner').removeClass('hidden');
+  }
 </script>
