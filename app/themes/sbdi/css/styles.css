@@ -1,4 +1,17 @@
 /* Banner */
+.beta-banner {
+    background-color: rgb(255, 197, 87);
+    padding: 0.8rem;
+    color: rgb(74, 74, 74);
+    font-size: 1.1rem;
+    text-align: center;
+
+    a {
+        color: rgb(74, 74, 74);
+        text-decoration: underline;
+    }
+}
+
 .banner {
     display: flex;
     margin: 0.8rem 0;
